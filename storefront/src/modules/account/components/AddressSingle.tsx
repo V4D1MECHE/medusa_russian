@@ -35,7 +35,7 @@ export const AddressSingle: React.FC<{
             </div>
             <div className="sm:grow sm:basis-0">
               <p className="text-xs text-grayscale-500 mb-1.5">Страна</p>
-              <p>
+              <p className="no-scrollbar">
                 {countries.find(
                   (country) => country.iso_2 === address.country_code
                 )?.display_name || address.country_code}

@@ -7,6 +7,13 @@ module.exports = defineConfig({
     backendUrl:
       process.env.BACKEND_URL ?? 'https://sofa-society-starter.medusajs.app',
     storefrontUrl: process.env.STOREFRONT_URL,
+    // vite: () => {
+    //   return {
+    //     server: {
+    //       allowedHosts: ["cms.mymili.ru", "mymili.ru"],
+    //     },
+    //   }
+    // },
   },
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,

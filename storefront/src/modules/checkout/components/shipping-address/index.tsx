@@ -163,7 +163,7 @@ const ShippingAddress = ({
               <div className="flex flex-wrap justify-between gap-6">
                 <div className="grow basis-0">
                   <p className="text-xs text-grayscale-500 mb-1.5">Страна</p>
-                  <p>
+                  <p className="no-scrollbar">
                     {cart?.region?.countries?.find(
                       (c) => c.iso_2 === formData.shipping_address.country_code
                     )?.display_name || formData.shipping_address.country_code}

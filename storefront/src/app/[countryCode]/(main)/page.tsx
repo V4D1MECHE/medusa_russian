@@ -7,9 +7,9 @@ import { LocalizedLink } from "@/components/LocalizedLink"
 import { CollectionsSection } from "@/components/CollectionsSection"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Шаблон Стартера",
+  title: "MiLi Official",
   description:
-    "Производительный фронтенд шаблон для электронной коммерции с Next.js 14 и Medusa.",
+    "Официальный дистрибьютор MiLi",
 }
 
 const ProductTypesSection: React.FC = async () => {
