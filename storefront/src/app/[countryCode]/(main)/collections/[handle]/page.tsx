@@ -70,11 +70,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   )
 
   const metadata = {
-    title: `${collection.title} | Medusa Store`,
+    title: `${collection.title} | Медуза Магазин`,
     description:
       collectionDetails.success && collectionDetails.data.description
         ? collectionDetails.data.description
-        : `${collection.title} collection`,
+        : `Коллекция ${collection.title}`,
   } as Metadata
 
   return metadata

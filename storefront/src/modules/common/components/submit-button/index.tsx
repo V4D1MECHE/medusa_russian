@@ -9,6 +9,11 @@ export function SubmitButton(props: Omit<ButtonProps, "type">) {
   const { pending } = useFormStatus()
 
   return (
-    <Button {...props} type="submit" isLoading={pending || props.isLoading} />
+    <Button 
+      {...props} 
+      type="submit" 
+      isLoading={pending || props.isLoading}
+      className={`${props.className || ''} rounded-md`}
+    />
   )
 }

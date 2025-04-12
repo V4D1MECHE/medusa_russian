@@ -26,7 +26,7 @@ export const SignOutButton = withReactQueryProvider<Omit<ButtonProps, "type">>(
         }}
       >
         <SubmitButton {...rest} isLoading={isPending}>
-          Log out
+          Выйти
         </SubmitButton>
       </form>
     )

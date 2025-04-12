@@ -66,7 +66,7 @@ const Shipping: React.FC<ShippingProps> = ({
               isOpen && "font-semibold"
             )}
           >
-            3. Shipping
+            3. Доставка
           </p>
         </div>
         {!isOpen &&
@@ -79,7 +79,7 @@ const Shipping: React.FC<ShippingProps> = ({
                 router.push(pathname + "?step=shipping", { scroll: false })
               }}
             >
-              Change
+              Изменить
             </Button>
           )}
       </div>
@@ -87,8 +87,7 @@ const Shipping: React.FC<ShippingProps> = ({
         availableShippingMethods?.length === 0 ? (
           <div>
             <p className="text-red-900">
-              There are no shipping methods available for your location. Please
-              contact us for further assistance.
+              Для вашего местоположения нет доступных способов доставки. Пожалуйста, свяжитесь с нами для получения дополнительной помощи.
             </p>
           </div>
         ) : (
@@ -97,7 +96,7 @@ const Shipping: React.FC<ShippingProps> = ({
               className="flex flex-col gap-4 mb-8"
               value={selectedShippingMethod?.id}
               onChange={set}
-              aria-label="Shipping methods"
+              aria-label="Способы доставки"
             >
               {availableShippingMethods?.map((option) => (
                 <UiRadio
@@ -125,7 +124,7 @@ const Shipping: React.FC<ShippingProps> = ({
               isLoading={isLoading}
               isDisabled={!cart.shipping_methods?.[0]}
             >
-              Next
+              Далее
             </Button>
           </div>
         )
@@ -133,7 +132,7 @@ const Shipping: React.FC<ShippingProps> = ({
         (cart.shipping_methods?.length ?? 0) > 0 &&
         selectedShippingMethod ? (
         <ul className="flex max-sm:flex-col flex-wrap gap-y-2 gap-x-28">
-          <li className="text-grayscale-500">Shipping</li>
+          <li className="text-grayscale-500">Доставка</li>
           <li className="text-grayscale-600">{selectedShippingMethod.name}</li>
         </ul>
       ) : null}

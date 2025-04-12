@@ -27,7 +27,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   return (
     <div
       className={twMerge(
-        "relative w-full overflow-hidden",
+        "relative w-full overflow-hidden rounded-md",
         className,
         isFeatured && "aspect-[11/14]",
         !isFeatured && size !== "square" && size !== "3/4" && "aspect-[9/16]",
@@ -52,7 +52,7 @@ const ImageOrPlaceholder = ({
   return image ? (
     <Image
       src={image}
-      alt="Thumbnail"
+      alt="Миниатюра"
       className="absolute inset-0 object-cover object-center"
       draggable={false}
       quality={50}
@@ -60,7 +60,7 @@ const ImageOrPlaceholder = ({
       fill
     />
   ) : (
-    <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+    <div className="w-full h-full absolute inset-0 flex items-center justify-center rounded-md">
       <PlaceholderImage size={size === "small" ? 16 : 24} />
     </div>
   )

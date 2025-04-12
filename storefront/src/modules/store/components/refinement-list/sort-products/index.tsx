@@ -23,26 +23,26 @@ const SortProducts = ({ sortBy, setQueryParams }: SortProductsProps) => {
 
   return (
     <ReactAria.Select
-      placeholder="Sort by"
+      placeholder="Сортировать по"
       selectedKey={sortBy || "sortBy"}
       onSelectionChange={(key) => {
         handleChange(key as SortOptions)
       }}
       className="max-md:hidden"
-      aria-label="Sort by"
+      aria-label="Сортировать по"
     >
-      <UiSelectButton>
+      <UiSelectButton className="rounded-md">
         <UiSelectValue />
         <UiSelectIcon />
       </UiSelectButton>
-      <ReactAria.Popover className="w-60" placement="bottom right">
-        <UiSelectListBox>
-          <UiSelectListBoxItem id="created_at">
-            Latest Arrivals
+      <ReactAria.Popover className="w-60 rounded-md" placement="bottom right">
+        <UiSelectListBox className="rounded-md overflow-scroll no-scrollbar">
+          <UiSelectListBoxItem id="created_at" className="rounded-md">
+            Новые поступления
           </UiSelectListBoxItem>
-          <UiSelectListBoxItem id="price_asc">Lowest price</UiSelectListBoxItem>
-          <UiSelectListBoxItem id="price_desc">
-            Highest price
+          <UiSelectListBoxItem id="price_asc" className="rounded-md">Низкая цена</UiSelectListBoxItem>
+          <UiSelectListBoxItem id="price_desc" className="rounded-md">
+            Высокая цена
           </UiSelectListBoxItem>
         </UiSelectListBox>
       </ReactAria.Popover>

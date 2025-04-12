@@ -130,7 +130,7 @@ const StripeCardPaymentButton = ({
       isDisabled={!cardComplete}
       data-testid="submit-payment-button"
     >
-      {!session ? "Enter card details" : "Continue to review"}
+      {!session ? "Ввести данные карты" : "Продолжить к проверке"}
     </Button>
   )
 }
@@ -180,8 +180,8 @@ const PaymentMethodButton = ({
       isDisabled={!selectedPaymentMethod}
     >
       {isStripe(selectedPaymentMethod)
-        ? "Enter card details"
-        : "Continue to review"}
+        ? "Ввести данные карты"
+        : "Продолжить к проверке"}
     </Button>
   )
 }

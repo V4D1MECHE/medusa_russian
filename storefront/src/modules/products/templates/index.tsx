@@ -49,19 +49,19 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <div
-      className="pt-18 md:pt-26 lg:pt-37 pb-26 md:pb-36"
+      className="pt-18 md:pt-26 lg:pt-37 pb-26 md:pb-36 rounded-md"
       data-testid="product-container"
     >
       <ImageGallery className="md:hidden" images={images} />
       <Layout>
         <LayoutColumn className="mb-26 md:mb-52">
-          <div className="flex max-lg:flex-col gap-8 xl:gap-27">
+          <div className="flex max-lg:flex-col gap-8 xl:gap-27 rounded-md">
             {hasImages && (
-              <div className="lg:w-1/2 flex flex-1 flex-col gap-8">
+              <div className="lg:w-1/2 flex flex-1 flex-col gap-8 rounded-md">
                 <ImageGallery className="max-md:hidden" images={images} />
               </div>
             )}
-            <div className="sticky flex-1 top-0">
+            <div className="sticky flex-1 top-0 rounded-md">
               <ProductInfo product={product} />
               <ProductActions
                 product={product}
@@ -83,16 +83,16 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
               {typeof collectionDetails.data.product_page_heading ===
                 "string" &&
                 collectionDetails.data.product_page_heading.length > 0 && (
-                  <h2 className="text-md md:text-2xl mb-8">
+                  <h2 className="text-md md:text-2xl mb-8 rounded-md">
                     {collectionDetails.data.product_page_heading}
                   </h2>
                 )}
               {typeof collectionDetails.data.product_page_image?.url ===
                 "string" && (
-                <div className="relative mb-8 md:mb-20 aspect-[3/2]">
+                <div className="relative mb-8 md:mb-20 aspect-[3/2] rounded-md overflow-hidden">
                   <Image
                     src={collectionDetails.data.product_page_image.url}
-                    alt="Collection product page image"
+                    alt="Изображение коллекции на странице товара"
                     fill
                     className="object-cover"
                   />
@@ -105,10 +105,10 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         collectionDetails.data.product_page_wide_image &&
         typeof collectionDetails.data.product_page_wide_image.url ===
           "string" && (
-          <div className="relative mb-8 md:mb-20 aspect-[3/2] md:aspect-[7/3]">
+          <div className="relative mb-8 md:mb-20 aspect-[3/2] md:aspect-[7/3] rounded-md overflow-hidden">
             <Image
               src={collectionDetails.data.product_page_wide_image.url}
-              alt="Collection product page wide image"
+              alt="Широкое изображение коллекции на странице товара"
               fill
               className="object-cover"
             />
@@ -126,11 +126,11 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             {typeof collectionDetails.data.product_page_cta_image?.url ===
               "string" && (
               <LayoutColumn start={1} end={{ base: 10, md: 6 }}>
-                <div className="relative aspect-[3/4]">
+                <div className="relative aspect-[3/4] rounded-md overflow-hidden">
                   <Image
                     src={collectionDetails.data.product_page_cta_image.url}
                     fill
-                    alt="Collection product page CTA image"
+                    alt="Изображение призыва к действию"
                   />
                 </div>
               </LayoutColumn>
@@ -146,7 +146,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                   "string" &&
                   collectionDetails.data.product_page_cta_heading.length >
                     0 && (
-                    <h3 className="text-md md:text-2xl my-8 md:mt-20">
+                    <h3 className="text-md md:text-2xl my-8 md:mt-20 rounded-md">
                       {collectionDetails.data.product_page_cta_heading}
                     </h3>
                   )}

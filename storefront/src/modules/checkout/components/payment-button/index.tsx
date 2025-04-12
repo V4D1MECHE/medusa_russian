@@ -53,7 +53,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
             selectPaymentMethod()
           }}
         >
-          Select a payment method
+          Выберите способ оплаты
         </Button>
       )
   }
@@ -69,7 +69,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
 
 //   return (
 //     <Button onPress={handleOrder} isLoading={submitting} className="w-full">
-//       Place order
+//       Оформить заказ
 //     </Button>
 //   )
 // }
@@ -149,7 +149,7 @@ const StripePaymentButton = ({
         isLoading={submitting}
         className="w-full"
       >
-        Place order
+        Оформить заказ
       </Button>
       <ErrorMessage error={errorMessage} />
     </>
@@ -188,13 +188,13 @@ const PayPalPaymentButton = ({
       ?.authorize()
       .then((authorization) => {
         if (authorization.status !== "COMPLETED") {
-          setErrorMessage(`An error occurred, status: ${authorization.status}`)
+          setErrorMessage(`Произошла ошибка, статус: ${authorization.status}`)
           return
         }
         onPaymentCompleted()
       })
       .catch(() => {
-        setErrorMessage(`An unknown error occurred, please try again.`)
+        setErrorMessage(`Произошла неизвестная ошибка, пожалуйста, попробуйте снова.`)
         setSubmitting(false)
       })
   }
@@ -248,7 +248,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
         onPress={handlePayment}
         className="w-full"
       >
-        Place order
+        Оформить заказ
       </Button>
       <ErrorMessage error={errorMessage} />
     </>

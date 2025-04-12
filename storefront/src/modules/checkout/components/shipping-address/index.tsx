@@ -47,7 +47,6 @@ const isShippingAddressEmpty = (formData: {
     !formData?.shipping_address?.phone
   )
 }
-// import AddressSelect from "../address-select"
 
 const ShippingAddress = ({
   customer,
@@ -157,13 +156,13 @@ const ShippingAddress = ({
       {customer &&
       (addressesInRegion?.length || 0) > 0 &&
       !isShippingAddressEmpty(formData) ? (
-        <div className="w-full border border-grayscale-200 rounded-xs p-4 flex flex-wrap gap-8 max-lg:flex-col mb-8">
+        <div className="w-full border border-grayscale-200 rounded-lg p-4 flex flex-wrap gap-8 max-lg:flex-col mb-8">
           <div className="flex flex-1 gap-8">
             <Icon name="user" className="w-6 h-6 mt-2.5" />
             <div className="flex flex-col gap-8 flex-1">
               <div className="flex flex-wrap justify-between gap-6">
                 <div className="grow basis-0">
-                  <p className="text-xs text-grayscale-500 mb-1.5">Country</p>
+                  <p className="text-xs text-grayscale-500 mb-1.5">Страна</p>
                   <p>
                     {cart?.region?.countries?.find(
                       (c) => c.iso_2 === formData.shipping_address.country_code
@@ -171,14 +170,14 @@ const ShippingAddress = ({
                   </p>
                 </div>
                 <div className="grow basis-0">
-                  <p className="text-xs text-grayscale-500 mb-1.5">Address</p>
+                  <p className="text-xs text-grayscale-500 mb-1.5">Адрес</p>
                   <p>{formData.shipping_address.address_1}</p>
                 </div>
               </div>
               {formData.shipping_address.address_2 && (
                 <div>
                   <p className="text-xs text-grayscale-500 mb-1.5">
-                    Apartment, suite, etc. (Optional)
+                    Квартира, офис и т.д. (Необязательно)
                   </p>
                   <p>{formData.shipping_address.address_2}</p>
                 </div>
@@ -186,12 +185,12 @@ const ShippingAddress = ({
               <div className="flex flex-wrap justify-between gap-6">
                 <div className="grow basis-0">
                   <p className="text-xs text-grayscale-500 mb-1.5">
-                    Postal Code
+                    Почтовый индекс
                   </p>
                   <p>{formData.shipping_address.postal_code}</p>
                 </div>
                 <div className="grow basis-0">
-                  <p className="text-xs text-grayscale-500 mb-1.5">City</p>
+                  <p className="text-xs text-grayscale-500 mb-1.5">Город</p>
                   <p>{formData.shipping_address.city}</p>
                 </div>
               </div>
@@ -199,15 +198,15 @@ const ShippingAddress = ({
           </div>
           <UiDialogTrigger>
             <Button variant="outline" size="sm" className="shrink-0">
-              Change
+              Изменить
             </Button>
             <UiModalOverlay>
               <UiModal>
                 <UiDialog>
-                  <p className="text-md mb-10">Change address</p>
+                  <p className="text-md mb-10">Изменить адрес</p>
                   <ReactAria.RadioGroup
                     className="flex flex-col gap-4 mb-10"
-                    aria-label="Shipping methods"
+                    aria-label="Способы доставки"
                     onChange={(value) => {
                       const selectedAddress = addressesInRegion?.find(
                         (a) => a.id === value
@@ -293,7 +292,7 @@ const ShippingAddress = ({
                   </ReactAria.RadioGroup>
                   <div className="flex justify-between">
                     <UiDialogTrigger>
-                      <Button>Add new address</Button>
+                      <Button>Добавить новый адрес</Button>
                       <UiModalOverlay>
                         <UiModal>
                           <UiDialog>
@@ -305,7 +304,7 @@ const ShippingAddress = ({
                         </UiModal>
                       </UiModalOverlay>
                     </UiDialogTrigger>
-                    <UiCloseButton variant="outline">Close</UiCloseButton>
+                    <UiCloseButton variant="outline">Закрыть</UiCloseButton>
                   </div>
                 </UiDialog>
               </UiModal>
@@ -315,37 +314,37 @@ const ShippingAddress = ({
       ) : (
         <div className="grid grid-cols-2 gap-4 mb-8">
           <InputField
-            placeholder="First name"
+            placeholder="Имя"
             name="shipping_address.first_name"
             inputProps={{ autoComplete: "given-name" }}
             data-testid="shipping-first-name-input"
           />
           <InputField
-            placeholder="Last name"
+            placeholder="Фамилия"
             name="shipping_address.last_name"
             inputProps={{ autoComplete: "family-name" }}
             data-testid="shipping-last-name-input"
           />
           <InputField
-            placeholder="Address"
+            placeholder="Адрес"
             name="shipping_address.address_1"
             inputProps={{ autoComplete: "address-line1" }}
             data-testid="shipping-address-input"
           />
           <InputField
-            placeholder="Company"
+            placeholder="Компания"
             name="shipping_address.company"
             inputProps={{ autoComplete: "organization" }}
             data-testid="shipping-company-input"
           />
           <InputField
-            placeholder="Postal code"
+            placeholder="Почтовый индекс"
             name="shipping_address.postal_code"
             inputProps={{ autoComplete: "postal-code" }}
             data-testid="shipping-postal-code-input"
           />
           <InputField
-            placeholder="City"
+            placeholder="Город"
             name="shipping_address.city"
             inputProps={{ autoComplete: "address-level2" }}
             data-testid="shipping-city-input"
@@ -368,13 +367,13 @@ const ShippingAddress = ({
             data-testid="shipping-country-select"
           />
           <InputField
-            placeholder="State / Province"
+            placeholder="Область / Регион"
             name="shipping_address.province"
             inputProps={{ autoComplete: "address-level1" }}
             data-testid="shipping-province-input"
           />
           <InputField
-            placeholder="Phone"
+            placeholder="Телефон"
             name="shipping_address.phone"
             inputProps={{ autoComplete: "tel" }}
             data-testid="shipping-phone-input"
@@ -400,7 +399,7 @@ const ShippingAddress = ({
             <UiCheckboxIcon />
           </UiCheckboxBox>
           <UiCheckboxLabel>
-            Billing address same as shipping address
+            Адрес оплаты совпадает с адресом доставки
           </UiCheckboxLabel>
         </UiCheckbox>
       </div>

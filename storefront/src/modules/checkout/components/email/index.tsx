@@ -11,16 +11,16 @@ import { setEmail } from "@lib/data/cart"
 import { SubmitButton } from "@modules/common/components/submit-button"
 import { Button } from "@/components/Button"
 import { Form, InputField } from "@/components/Forms"
-import { UiCloseButton, UiDialog, UiDialogTrigger } from "@/components/Dialog"
-import { UiModal, UiModalOverlay } from "@/components/ui/Modal"
-import { Icon } from "@/components/Icon"
-import { LoginForm } from "@modules/auth/components/LoginForm"
+// import { UiCloseButton, UiDialog, UiDialogTrigger } from "@/components/Dialog"
+// import { UiModal, UiModalOverlay } from "@/components/ui/Modal"
+// import { Icon } from "@/components/Icon"
+// import { LoginForm } from "@modules/auth/components/LoginForm"
 import ErrorMessage from "@modules/checkout/components/error-message"
-import { useCustomer } from "hooks/customer"
+// import { useCustomer } from "hooks/customer"
 import { withReactQueryProvider } from "@lib/util/react-query"
 
 export const emailFormSchema = z.object({
-  email: z.string().min(3).email("Enter a valid email address."),
+  email: z.string().min(3).email("Введите корректный email адрес."),
 })
 
 const Email = ({
@@ -34,7 +34,7 @@ const Email = ({
   const router = useRouter()
   const pathname = usePathname()
 
-  const { data: customer } = useCustomer()
+  // const { data: customer } = useCustomer()
 
   const isOpen = searchParams.get("step") === "email"
 
@@ -67,16 +67,16 @@ const Email = ({
               1. Email
             </p>
           </div>
-          {isOpen && !customer && (
+          {/* {isOpen && !customer && (
             <div className="text-grayscale-500">
               <p>
-                Already have an account? No worries, just{" "}
+                Уже есть аккаунт? Не беспокойтесь, просто{" "}
                 <UiDialogTrigger>
-                  <Button variant="link">log in.</Button>
+                  <Button variant="link">войдите.</Button>
                   <UiModalOverlay>
                     <UiModal className="relative max-w-108">
                       <UiDialog>
-                        <p className="text-md mb-10">Log in</p>
+                        <p className="text-md mb-10">Вход</p>
                         <LoginForm
                           redirectUrl={`/${countryCode}/checkout?step=delivery`}
                         />
@@ -92,7 +92,7 @@ const Email = ({
                 </UiDialogTrigger>
               </p>
             </div>
-          )}
+          )} */}
         </div>
         {!isOpen && (
           <Button
@@ -101,7 +101,7 @@ const Email = ({
               router.push(pathname + "?step=email")
             }}
           >
-            Change
+            Изменить
           </Button>
         )}
       </div>
@@ -123,7 +123,7 @@ const Email = ({
                   name="email"
                   inputProps={{
                     autoComplete: "email",
-                    title: "Enter a valid email address.",
+                    title: "Введите корректный email адрес.",
                   }}
                   data-testid="shipping-email-input"
                 />
@@ -132,7 +132,7 @@ const Email = ({
                   isLoading={isPending}
                   isDisabled={!formValue}
                 >
-                  Next
+                  Далее
                 </SubmitButton>
                 <ErrorMessage error={state?.error} />
               </>

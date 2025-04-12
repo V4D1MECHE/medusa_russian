@@ -5,8 +5,8 @@ import { listRegions } from "@lib/data/regions"
 import { Layout, LayoutColumn } from "@/components/Layout"
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Learn more about Sofa Society",
+  title: "О нас",
+  description: "Узнайте больше о MiLi",
 }
 
 export async function generateStaticParams() {
@@ -38,30 +38,29 @@ export default function AboutPage() {
           src="/images/content/living-room-gray-three-seater-sofa.png"
           width={2880}
           height={1500}
-          alt="Living room with gray three-seater sofa"
-          className="md:h-screen md:object-cover"
+          alt="Гостиная с серым трехместным диваном"
+          className="md:h-screen md:object-cover rounded-md"
         />
       </div>
       <div className="pt-8 md:pt-26 pb-26 md:pb-36">
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, lg: 7 }}>
-            <h3 className="text-md max-lg:mb-6 md:text-2xl">
-              At Sofa Society, we believe that a sofa is the heart of every
-              home.
+            <h3 className="text-md max-lg:mb-6 md:text-2xl rounded-md">
+              В MiLi мы верим, что диван - это сердце каждого дома.
             </h3>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, lg: 8 }} end={13}>
-            <div className="md:text-md lg:mt-18">
-              <p className="mb-5 lg:mb-9">
-                Welcome to Sofa Society, where we believe that comfort and style
-                should be effortlessly intertwined. Our mission is to help you
-                create beautiful, functional spaces that bring warmth and
-                relaxation into your home.
+            <div className="md:text-md lg:mt-18 rounded-md">
+              <p className="mb-5 lg:mb-9 rounded-md">
+                Добро пожаловать в MiLi, где мы верим, что комфорт и стиль
+                должны быть легко переплетены. Наша миссия - помочь вам
+                создать красивые, функциональные пространства, которые приносят тепло и
+                расслабление в ваш дом.
               </p>
-              <p>
-                Every piece in our collection is designed with care, blending
-                timeless craftsmanship with modern aesthetics to offer you the
-                perfect balance between form and function.
+              <p className="rounded-md">
+                Каждый предмет в нашей коллекции разработан с заботой, сочетая
+                вневременное мастерство с современной эстетикой, чтобы предложить вам
+                идеальный баланс между формой и функцией.
               </p>
             </div>
           </LayoutColumn>
@@ -70,32 +69,32 @@ export default function AboutPage() {
               src="/images/content/living-room-black-armchair-dark-gray-sofa.png"
               width={2496}
               height={1404}
-              alt="Living room with black armchair and dark gray sofa"
-              className="mt-26 lg:mt-36 mb-8 lg:mb-26"
+              alt="Гостиная с черным креслом и темно-серым диваном"
+              className="mt-26 lg:mt-36 mb-8 lg:mb-26 rounded-md"
             />
           </LayoutColumn>
           <LayoutColumn start={1} end={{ base: 13, lg: 8 }}>
-            <h3 className="text-md lg:mb-10 mb-6 md:text-2xl">
-              We are here to make your living space a true reflection of your
-              personal style.
+            <h3 className="text-md lg:mb-10 mb-6 md:text-2xl rounded-md">
+              Мы здесь, чтобы сделать ваше жилое пространство истинным отражением вашего
+              личного стиля.
             </h3>
           </LayoutColumn>
           <LayoutColumn start={1} end={{ base: 13, lg: 6 }}>
-            <div className="mb-16 lg:mb-26">
-              <p className="mb-5 md:mb-9">
-                At the heart of our brand is a deep commitment to quality. We
-                understand that a sofa isn&apos;t just another piece of
-                furniture; it&apos;s where you unwind, gather with loved ones,
-                and make memories. That&apos;s why we source only the finest
-                materials and fabrics, ensuring that every sofa we offer is
-                built to last.
+            <div className="mb-16 lg:mb-26 rounded-md">
+              <p className="mb-5 md:mb-9 rounded-md">
+                В основе нашего бренда лежит глубокая приверженность качеству. Мы
+                понимаем, что диван - это не просто еще один предмет
+                мебели; это место, где вы расслабляетесь, собираетесь с близкими,
+                и создаете воспоминания. Именно поэтому мы используем только лучшие
+                материалы и ткани, гарантируя, что каждый диван, который мы предлагаем,
+                создан на долгие годы.
               </p>
-              <p>
-                From luxurious leathers and soft linens to high-performance
-                textiles, each fabric is carefully selected for its durability
-                and beauty. Our attention to detail extends to every stitch and
-                seam, guaranteeing that your sofa will not only look stunning
-                but will also withstand the test of time.
+              <p className="rounded-md">
+                От роскошной кожи и мягкого льна до высокоэффективных
+                тканей, каждый материал тщательно подобран для своей прочности
+                и красоты. Наше внимание к деталям распространяется на каждый стежок и
+                шов, гарантируя, что ваш диван будет не только выглядеть потрясающе,
+                но и выдержит испытание временем.
               </p>
             </div>
           </LayoutColumn>
@@ -104,31 +103,31 @@ export default function AboutPage() {
               src="/images/content/gray-one-seater-sofa-wooden-coffee-table.png"
               width={1200}
               height={1600}
-              alt="Gray one-seater sofa and wooden coffee table"
-              className="mb-16 lg:mb-46"
+              alt="Серое одноместное кресло и деревянный журнальный столик"
+              className="mb-16 lg:mb-46 rounded-md"
             />
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, lg: 8 }} end={13}>
-            <div className="mb-6 lg:mb-20 xl:mb-36">
-              <p>
-                Our design philosophy revolves around creating pieces that are
-                both beautiful and practical. Inspired by Scandinavian
-                simplicity, modern luxury, and timeless classics, our
-                collections are curated to suit a wide variety of tastes and
-                lifestyles. We understand that every home is different, so we
-                offer a diverse range of styles, colors, and textures to help
-                you find the perfect fit. Whether you prefer sleek modern lines
-                or soft, inviting silhouettes, we have something to suit every
-                space and personality.
+            <div className="mb-6 lg:mb-20 xl:mb-36 rounded-md">
+              <p className="rounded-md">
+                Наша философия дизайна основана на создании предметов, которые
+                одновременно красивы и практичны. Вдохновленные скандинавской
+                простотой, современной роскошью и вечной классикой, наши
+                коллекции подобраны так, чтобы соответствовать широкому спектру вкусов и
+                образов жизни. Мы понимаем, что каждый дом уникален, поэтому
+                предлагаем разнообразные стили, цвета и текстуры, чтобы помочь
+                вам найти идеальное сочетание. Предпочитаете ли вы современные четкие линии
+                или мягкие, приглашающие силуэты, у нас есть что-то для каждого
+                пространства и индивидуальности.
               </p>
             </div>
-            <div className="md:text-md max-lg:mb-26">
-              <p>
-                We believe that great design should be environmentally
-                conscious, which is why we strive to minimise our environmental
-                footprint through responsible sourcing and production practices.
-                Our commitment to sustainability ensures that our products are
-                not only beautiful but also kind to the planet.
+            <div className="md:text-md max-lg:mb-26 rounded-md">
+              <p className="rounded-md">
+                Мы верим, что отличный дизайн должен быть экологически
+                сознательным, поэтому мы стремимся минимизировать наш экологический
+                след через ответственный подход к выбору источников и практик производства.
+                Наша приверженность устойчивому развитию гарантирует, что наши продукты
+                не только красивы, но и бережны к планете.
               </p>
             </div>
           </LayoutColumn>
@@ -137,27 +136,27 @@ export default function AboutPage() {
           src="/images/content/living-room-gray-three-seater-puffy-sofa.png"
           width={2880}
           height={1618}
-          alt="Living room with gray three-seater puffy sofa"
-          className="mb-8 lg:mb-26"
+          alt="Гостиная с серым трехместным пышным диваном"
+          className="mb-8 lg:mb-26 rounded-md"
         />
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, lg: 7 }}>
-            <h3 className="text-md max-lg:mb-6 md:text-2xl">
-              Our customers are at the center of everything we do!
+            <h3 className="text-md max-lg:mb-6 md:text-2xl rounded-md">
+              Наши клиенты находятся в центре всего, что мы делаем!
             </h3>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, lg: 8 }} end={13}>
-            <div className="md:text-md lg:mt-18">
-              <p className="mb-5 lg:mb-9">
-                Our team is here to help guide you through the process, offering
-                personalised support to ensure that you find exactly what
-                you&apos;re looking for.
+            <div className="md:text-md lg:mt-18 rounded-md">
+              <p className="mb-5 lg:mb-9 rounded-md">
+                Наша команда здесь, чтобы помочь вам в процессе выбора, предлагая
+                персонализированную поддержку, чтобы убедиться, что вы найдете именно то,
+                что ищете.
               </p>
-              <p>
-                We&apos;re not just selling sofas - we&apos;re helping you
-                create spaces where you can relax, recharge, and make lasting
-                memories. Thank you for choosing Sofa Society to be a part of
-                your home!
+              <p className="rounded-md">
+                Мы не просто продаем диваны - мы помогаем вам
+                создавать пространства, где вы можете расслабиться, восстановить силы и создать
+                незабываемые воспоминания. Спасибо, что выбрали MiLi как часть
+                вашего дома!
               </p>
             </div>
           </LayoutColumn>

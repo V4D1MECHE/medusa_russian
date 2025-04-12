@@ -9,9 +9,9 @@ export const NoResults = () => {
 
   return (
     <LayoutColumn className="pt-28">
-      <div className="flex justify-center flex-col items-center">
+      <div className="flex justify-center flex-col items-center rounded-md">
         <div>
-          <p className="text-md text-center mb-2">No results match!</p>
+          <p className="text-md text-center mb-2 rounded-md">Нет совпадающих результатов!</p>
         </div>
         <Link
           scroll={false}
@@ -19,7 +19,7 @@ export const NoResults = () => {
           variant="underline"
           className="inline-flex md:pb-0"
         >
-          Clear filters
+          Очистить фильтры
         </Link>
       </div>
     </LayoutColumn>

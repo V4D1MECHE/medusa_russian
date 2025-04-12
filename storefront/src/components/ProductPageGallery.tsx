@@ -63,7 +63,7 @@ export const ProductPageGallery: React.FC<
           onClick={scrollPrev}
           disabled={prevBtnDisabled}
           className="transition-opacity absolute left-4 z-10 max-lg:hidden"
-          aria-label="Previous"
+          aria-label="Предыдущий"
         >
           <IconCircle
             className={twJoin(
@@ -90,7 +90,7 @@ export const ProductPageGallery: React.FC<
           onClick={scrollNext}
           disabled={nextBtnDisabled}
           className="transition-opacity absolute right-4 z-10 max-lg:hidden"
-          aria-label="Next"
+          aria-label="Следующий"
         >
           <IconCircle
             className={twJoin(

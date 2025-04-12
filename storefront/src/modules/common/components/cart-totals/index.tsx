@@ -22,19 +22,19 @@ const CartTotals: React.FC<CartTotalsProps> = ({ cart }) => {
 
   return (
     <div>
-      <div className="flex flex-col gap-2 lg:gap-1 mb-8">
-        <div className="flex justify-between max-lg:text-xs">
+      <div className="flex flex-col gap-2 lg:gap-1 mb-8 rounded-md">
+        <div className="flex justify-between max-lg:text-xs rounded-md">
           <div>
-            <p>Subtotal</p>
+            <p>Подытог</p>
           </div>
           <div className="self-end">
             <p>{convertToLocale({ amount: subtotal ?? 0, currency_code })}</p>
           </div>
         </div>
         {!!discount_total && (
-          <div className="flex justify-between max-lg:text-xs">
+          <div className="flex justify-between max-lg:text-xs rounded-md">
             <div>
-              <p>Discount</p>
+              <p>Скидка</p>
             </div>
             <div className="self-end">
               <p>
@@ -47,9 +47,9 @@ const CartTotals: React.FC<CartTotalsProps> = ({ cart }) => {
             </div>
           </div>
         )}
-        <div className="flex justify-between max-lg:text-xs">
+        <div className="flex justify-between max-lg:text-xs rounded-md">
           <div>
-            <p>Shipping</p>
+            <p>Доставка</p>
           </div>
           <div className="self-end">
             <p>
@@ -57,18 +57,18 @@ const CartTotals: React.FC<CartTotalsProps> = ({ cart }) => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between max-lg:text-xs">
+        <div className="flex justify-between max-lg:text-xs rounded-md">
           <div>
-            <p>Taxes</p>
+            <p>Налоги</p>
           </div>
           <div className="self-end">
             <p>{convertToLocale({ amount: tax_total ?? 0, currency_code })}</p>
           </div>
         </div>
         {!!gift_card_total && (
-          <div className="flex justify-between max-lg:text-xs">
+          <div className="flex justify-between max-lg:text-xs rounded-md">
             <div>
-              <p>Gift card</p>
+              <p>Подарочная карта</p>
             </div>
             <div className="self-end">
               <p>
@@ -82,15 +82,15 @@ const CartTotals: React.FC<CartTotalsProps> = ({ cart }) => {
           </div>
         )}
       </div>
-      <div className="flex justify-between text-md">
+      <div className="flex justify-between text-md rounded-md">
         <div>
-          <p>Total</p>
+          <p>Итого</p>
         </div>
         <div className="self-end">
           <p>{convertToLocale({ amount: total ?? 0, currency_code })}</p>
         </div>
       </div>
-      <div className="absolute h-full w-auto top-0 right-0 bg-black" />
+      <div className="absolute h-full w-auto top-0 right-0 bg-black rounded-r-md" />
     </div>
   )
 }

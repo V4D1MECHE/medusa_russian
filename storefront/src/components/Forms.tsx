@@ -89,7 +89,7 @@ export const getInputClassNames = ({
   const successClasses = isSuccess ? "border-green-500 pr-7" : ""
 
   return twJoin(
-    "peer block w-full rounded-xs transition-all outline-none px-4 placeholder:invisible border border-grayscale-200 hover:border-grayscale-500 focus:border-grayscale-500 bg-transparent disabled:pointer-events-none disabled:bg-grayscale-50 [&:autofill]:bg-clip-text aria-[invalid=true]:border-red-primary aria-[invalid=true]:focus:border-red-900 aria-[invalid=true]:hover:border-red-900",
+    "peer block w-full rounded-lg transition-all outline-none px-4 placeholder:invisible border border-grayscale-200 hover:border-grayscale-500 focus:border-grayscale-500 bg-transparent disabled:pointer-events-none disabled:bg-grayscale-50 [&:autofill]:bg-clip-text aria-[invalid=true]:border-red-primary aria-[invalid=true]:focus:border-red-900 aria-[invalid=true]:hover:border-red-900",
     sizeClasses[uiSize],
     visuallyDisabledClasses,
     successClasses

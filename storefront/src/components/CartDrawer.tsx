@@ -26,7 +26,7 @@ export const CartDrawer: React.FC<{
         onPress={() => setIsCartDrawerOpen(true)}
         variant="ghost"
         className="p-1 group-data-[light=true]:md:text-white group-data-[sticky=true]:md:text-black"
-        aria-label="Open cart"
+        aria-label="Открыть корзину"
       >
         {children}
       </Button>
@@ -41,9 +41,9 @@ export const CartDrawer: React.FC<{
           <>
             <div className="flex justify-between mb-2">
               <div>
-                <p className="text-md">Cart</p>
+                <p className="text-md">Корзина</p>
               </div>
-              <button onClick={close} aria-label="Close cart">
+              <button onClick={close} aria-label="Закрыть корзину">
                 <Icon name="close" className="w-6" />
               </button>
             </div>
@@ -74,15 +74,14 @@ export const CartDrawer: React.FC<{
                     isFullWidth
                     className="mt-4"
                   >
-                    Proceed to checkout
+                    Перейти к оформлению
                   </LocalizedButtonLink>
                 </div>
               </>
             ) : (
               <>
                 <p className="md:text-sm max-sm:mr-10 mb-6 mt-2">
-                  You don&apos;t have anything in your cart. Let&apos;s change
-                  that, use the link below to start browsing our products.
+                  В вашей корзине пусто. Давайте это исправим, используйте ссылку ниже, чтобы начать просматривать наши товары.
                 </p>
                 <div>
                   <LocalizedLink
@@ -91,7 +90,7 @@ export const CartDrawer: React.FC<{
                       setIsCartDrawerOpen(false)
                     }}
                   >
-                    Explore products
+                    Просмотреть товары
                   </LocalizedLink>
                 </div>
               </>

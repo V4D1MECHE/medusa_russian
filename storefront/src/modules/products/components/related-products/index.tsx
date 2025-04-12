@@ -51,14 +51,14 @@ export default async function RelatedProducts({
     <>
       <Layout>
         <LayoutColumn className="mt-26 md:mt-36">
-          <h4 className="text-md md:text-2xl mb-8 md:mb-16">
-            Related products
+          <h4 className="text-md md:text-2xl mb-8 md:mb-16 rounded-md">
+            Похожие товары
           </h4>
         </LayoutColumn>
       </Layout>
       <Layout className="gap-y-10 md:gap-y-16">
         {products.map((product) => (
-          <LayoutColumn key={product.id} className="!col-span-6 md:!col-span-4">
+          <LayoutColumn key={product.id} className="!col-span-6 md:!col-span-4 rounded-md">
             <Product product={product} />
           </LayoutColumn>
         ))}

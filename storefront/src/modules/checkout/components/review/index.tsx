@@ -33,7 +33,7 @@ const Review = ({ cart }: { cart: HttpTypes.StoreCart }) => {
               isOpen && "font-semibold"
             )}
           >
-            5. Review
+            5. Проверка
           </p>
         </div>
         {!isOpen &&
@@ -47,17 +47,14 @@ const Review = ({ cart }: { cart: HttpTypes.StoreCart }) => {
                 router.push(pathname + "?step=review", { scroll: false })
               }}
             >
-              View
+              Просмотр
             </Button>
           )}
       </div>
       {isOpen && previousStepsCompleted && (
         <>
           <p className="mb-8">
-            By clicking the Place Order button, you confirm that you have read,
-            understand and accept our Terms of Use, Terms of Sale and Returns
-            Policy and acknowledge that you have read Medusa Store&apos;s
-            Privacy Policy.
+            Нажимая кнопку Оформить заказ, вы подтверждаете, что прочитали, поняли и принимаете наши Условия использования, Условия продажи и Политику возврата, а также подтверждаете, что ознакомились с Политикой конфиденциальности Medusa Store.
           </p>
           <PaymentButton
             cart={cart}

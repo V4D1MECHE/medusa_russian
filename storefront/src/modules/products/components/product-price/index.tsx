@@ -16,7 +16,7 @@ export default function ProductPrice({
   const selectedPrice = variant ? variantPrice : cheapestPrice
 
   if (!selectedPrice) {
-    return <div className="block w-32 h-9 bg-grayscale-50 animate-pulse" />
+    return <div className="block w-32 h-9 bg-grayscale-50 animate-pulse rounded-md" />
   }
 
   const hasReducedPrice =
@@ -25,11 +25,11 @@ export default function ProductPrice({
 
   if (hasReducedPrice && variant) {
     return (
-      <div>
-        <p className="text-sm mb-1 text-grayscale-500 line-through">
+      <div className="rounded-md">
+        <p className="text-sm mb-1 text-grayscale-500 line-through rounded-md">
           {selectedPrice.original_price}
         </p>
-        <p className="text-md mb-8 text-red-primary">
+        <p className="text-md mb-8 text-red-primary rounded-md">
           {selectedPrice.calculated_price}
         </p>
       </div>
@@ -38,8 +38,8 @@ export default function ProductPrice({
 
   return (
     <>
-      <p className="text-md mb-8">
-        {!variant && "From "}
+      <p className="text-md mb-8 rounded-md">
+        {!variant && "От "}
         {selectedPrice.calculated_price}
       </p>
     </>

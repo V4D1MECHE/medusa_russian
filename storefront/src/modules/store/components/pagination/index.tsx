@@ -36,7 +36,7 @@ export function Pagination({
     <button
       key={p}
       className={twMerge(
-        "txt-xlarge-plus text-fg-muted dark:text-fg-muted-dark px-1",
+        "txt-xlarge-plus text-fg-muted dark:text-fg-muted-dark px-1 rounded-md",
         isCurrent &&
           "text-fg-base dark:text-fg-base-dark hover:text-fg-subtle dark:hover:text-fg-subtle-dark"
       )}
@@ -51,7 +51,7 @@ export function Pagination({
   const renderEllipsis = (key: string) => (
     <span
       key={key}
-      className="txt-xlarge-plus text-fg-muted dark:text-fg-muted-dark items-center cursor-default"
+      className="txt-xlarge-plus text-fg-muted dark:text-fg-muted-dark items-center cursor-default rounded-md"
     >
       ...
     </span>
@@ -109,8 +109,8 @@ export function Pagination({
 
   // Render the component
   return (
-    <div className="flex justify-center w-full mt-12">
-      <div className="flex gap-2 items-end" data-testid={dataTestid}>
+    <div className="flex justify-center w-full mt-12 rounded-md">
+      <div className="flex gap-2 items-end rounded-md" data-testid={dataTestid}>
         {renderPageButtons()}
       </div>
     </div>

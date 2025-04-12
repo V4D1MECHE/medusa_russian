@@ -21,7 +21,7 @@ export const SidebarNav: React.FC = () => {
           currentPath === "/account" && "font-semibold"
         )}
       >
-        Personal &amp; security
+        Личные данные и безопасность
       </LocalizedLink>
       <LocalizedLink
         href="/account/my-orders"
@@ -30,7 +30,7 @@ export const SidebarNav: React.FC = () => {
           currentPath.startsWith("/account/my-orders") && "font-semibold"
         )}
       >
-        My orders
+        Мои заказы
       </LocalizedLink>
     </>
   )

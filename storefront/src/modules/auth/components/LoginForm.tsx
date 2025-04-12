@@ -45,7 +45,7 @@ export const LoginForm = withReactQueryProvider<{
           className="flex-1"
         />
         <InputField
-          placeholder="Password"
+          placeholder="Пароль"
           name="password"
           type="password"
           className="flex-1"
@@ -56,12 +56,12 @@ export const LoginForm = withReactQueryProvider<{
           variant="underline"
           className="self-start !pb-0 text-grayscale-500 leading-none"
         >
-          Forgot password?
+          Забыли пароль?
         </LocalizedLink>
         {!data?.success && (
           <p className="text-red-primary text-sm">{data?.message}</p>
         )}
-        <SubmitButton isLoading={isPending}>Log in</SubmitButton>
+        <SubmitButton isLoading={isPending}>Войти</SubmitButton>
       </div>
     </Form>
   )

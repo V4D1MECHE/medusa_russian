@@ -2,12 +2,12 @@
 
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { CreditCard } from "@medusajs/icons"
+// import { CreditCard } from "@medusajs/icons"
 import { CardElement } from "@stripe/react-stripe-js"
 import { PaymentMethod, StripeCardElementOptions } from "@stripe/stripe-js"
 import { twJoin } from "tailwind-merge"
 import { HttpTypes } from "@medusajs/types"
-import { capitalize } from "lodash"
+// import { capitalize } from "lodash"
 
 import { isStripe as isStripeFunc, paymentInfoMap } from "@lib/constants"
 import { setPaymentMethod } from "@lib/data/cart"
@@ -36,7 +36,7 @@ const Payment = ({
 
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [cardBrand, setCardBrand] = useState<string | null>(null)
+  // const [cardBrand, setCardBrand] = useState<string | null>(null)
   const [cardComplete, setCardComplete] = useState(false)
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(
     activeSession?.provider_id ?? ""
@@ -70,7 +70,7 @@ const Payment = ({
         },
       },
       classes: {
-        base: "pt-[18px] pb-1 block w-full h-14.5 px-4 mt-0 border rounded-xs appearance-none focus:outline-none focus:ring-0 border-grayscale-200 hover:border-grayscale-500 focus:border-grayscale-500 transition-all ease-in-out",
+        base: "pt-[18px] pb-1 block w-full h-14.5 px-4 mt-0 border rounded-lg appearance-none focus:outline-none focus:ring-0 border-grayscale-200 hover:border-grayscale-500 focus:border-grayscale-500 transition-all ease-in-out",
       },
     }
   }, [])
@@ -102,17 +102,17 @@ const Payment = ({
 
     try {
       await setPaymentMethod(activeSession.id, null)
-      setCardBrand(null)
+      // setCardBrand(null)
       setCardComplete(false)
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
-      setError("Failed to remove card")
+      setError("Не удалось удалить карту")
     }
   }, [activeSession?.id])
 
   useEffect(() => {
     if (paymentMethod) {
-      setCardBrand(capitalize(paymentMethod?.card?.brand))
+      // setCardBrand(capitalize(paymentMethod?.card?.brand))
       setCardComplete(true)
     }
   }, [paymentMethod])
@@ -127,12 +127,12 @@ const Payment = ({
               isOpen && "font-semibold"
             )}
           >
-            4. Payment
+            4. Оплата
           </p>
         </div>
         {!isOpen && paymentReady && (
           <Button variant="link" onPress={handleEdit}>
-            Change
+            Изменить
           </Button>
         )}
       </div>
@@ -142,7 +142,7 @@ const Payment = ({
             <UiRadioGroup
               value={selectedPaymentMethod}
               onChange={setSelectedPaymentMethod}
-              aria-label="Payment methods"
+              aria-label="Способы оплаты"
             >
               {availablePaymentMethods
                 .sort((a, b) => {
@@ -164,17 +164,17 @@ const Payment = ({
                   (paymentMethod?.card?.brand ? (
                     <Input
                       value={"**** **** **** " + paymentMethod?.card.last4}
-                      placeholder="Card number"
+                      placeholder="Номер карты"
                       disabled={true}
                     />
                   ) : (
                     <CardElement
                       options={useOptions as StripeCardElementOptions}
                       onChange={(e) => {
-                        setCardBrand(
-                          e.brand &&
-                            e.brand.charAt(0).toUpperCase() + e.brand.slice(1)
-                        )
+                        // setCardBrand(
+                        //   e.brand &&
+                        //     e.brand.charAt(0).toUpperCase() + e.brand.slice(1)
+                        // )
                         setError(e.error?.message || null)
                         setCardComplete(e.complete)
                       }}
@@ -187,8 +187,8 @@ const Payment = ({
 
         {/* {paidByGiftcard && (
           <div className="flex gap-10">
-            <div className="text-grayscale-500">Payment method</div>
-            <div>Gift card</div>
+            <div className="text-grayscale-500">Способ оплаты</div>
+            <div>Подарочная карта</div>
           </div>
         )} */}
         <ErrorMessage
@@ -203,7 +203,7 @@ const Payment = ({
             isDisabled={!cardComplete}
             data-testid="submit-payment-button"
           >
-            Change card
+            Изменить карту
           </Button>
         )}
         <PaymentCardButton
@@ -221,31 +221,17 @@ const Payment = ({
         {cart && paymentReady && activeSession ? (
           <div className="flex flex-col gap-4">
             <div className="flex max-sm:flex-col flex-wrap gap-y-2 gap-x-12">
-              <div className="text-grayscale-500">Payment method</div>
+              <div className="text-grayscale-500">Способ оплаты</div>
               <div className="text-grayscale-600">
                 {paymentInfoMap[selectedPaymentMethod]?.title ||
                   selectedPaymentMethod}
               </div>
             </div>
-            <div className="flex max-sm:flex-col flex-wrap gap-y-2 gap-x-14.5">
-              <div className="text-grayscale-500">Payment details</div>
-              {isStripeFunc(selectedPaymentMethod) && cardBrand ? (
-                <div className="text-grayscale-600 flex items-center gap-2">
-                  {paymentInfoMap[selectedPaymentMethod]?.icon || (
-                    <CreditCard />
-                  )}
-                  <p>{cardBrand}</p>
-                </div>
-              ) : (
-                <div>
-                  <p>Please enter card details</p>
-                </div>
-              )}
-            </div>
+            
           </div> /* : paidByGiftcard ? (
           <div className="flex gap-10">
-            <div className="text-grayscale-500">Payment method</div>
-            <div>Gift card</div>
+            <div className="text-grayscale-500">Способ оплаты</div>
+            <div>Подарочная карта</div>
           </div>
         ) */
         ) : null}

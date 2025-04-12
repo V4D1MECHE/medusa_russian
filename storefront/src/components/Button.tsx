@@ -58,7 +58,7 @@ export const getButtonClassNames = ({
     size === "sm" ? "px-4 h-8 text-xs" : size === "md" ? "px-6 h-12" : ""
 
   return twJoin(
-    "inline-flex items-center focus-visible:outline-none rounded-xs justify-center transition-colors disabled:pointer-events-none",
+    "inline-flex items-center focus-visible:outline-none rounded-lg justify-center transition-colors disabled:pointer-events-none",
     isFullWidth && "w-full",
     flexDirection,
     hasGap && "gap-2",

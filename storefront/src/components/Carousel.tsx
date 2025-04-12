@@ -69,7 +69,7 @@ export const Carousel: React.FC<CarouselProps> = ({
                         "max-md:hidden transition-opacity",
                         prevBtnDisabled && "opacity-50"
                       )}
-                      aria-label="Previous"
+                      aria-label="Предыдущий"
                     >
                       <IconCircle>
                         <Icon
@@ -86,7 +86,7 @@ export const Carousel: React.FC<CarouselProps> = ({
                         "max-md:hidden transition-opacity",
                         nextBtnDisabled && "opacity-50"
                       )}
-                      aria-label="Next"
+                      aria-label="Следующий"
                     >
                       <IconCircle>
                         <Icon

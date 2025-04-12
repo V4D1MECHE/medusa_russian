@@ -12,12 +12,12 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
 
   if (!payment) {
     return (
-      <p className="text-grayscale-500">No payment information available</p>
+      <p className="text-grayscale-500 rounded-md">Информация об оплате недоступна</p>
     )
   }
 
   return (
-    <p className="text-grayscale-500">
+    <p className="text-grayscale-500 rounded-md">
       {paymentInfoMap[payment.provider_id].title}
       <br />
       {isStripe(payment.provider_id) && payment.data?.card_last4
@@ -25,7 +25,7 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
         : `${convertToLocale({
             amount: payment.amount,
             currency_code: order.currency_code,
-          })} paid at ${new Date(payment.created_at ?? "").toLocaleString()}`}
+          })} оплачено ${new Date(payment.created_at ?? "").toLocaleString()}`}
     </p>
   )
 }

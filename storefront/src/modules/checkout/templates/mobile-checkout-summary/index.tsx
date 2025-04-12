@@ -42,7 +42,7 @@ const MobileCheckoutSummary = ({ cart }: { cart: HttpTypes.StoreCart }) => {
         onClick={onClickHandler}
         data-open="no"
       >
-        <p>Order summary</p>
+        <p>Сводка заказа</p>
         <div className="flex items-center gap-4">
           <span>{convertToLocale({ amount: total ?? 0, currency_code })}</span>
           <Icon

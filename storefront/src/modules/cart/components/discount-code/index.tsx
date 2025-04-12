@@ -38,10 +38,10 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart, className }) => {
         <InputField
           name="code"
           inputProps={{ autoFocus: false, uiSize: "md" }}
-          placeholder="Discount code"
+          placeholder="Код скидки"
           className="flex flex-1 flex-col"
         />
-        <SubmitButton>Apply</SubmitButton>
+        <SubmitButton>Применить</SubmitButton>
       </div>
     </Form>
   )

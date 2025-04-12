@@ -69,12 +69,12 @@ export const UpsertAddressForm = withReactQueryProvider<{
         return (
           <>
             <p className="text-md mb-8 md:mb-10">
-              {addressId ? "Change address" : "Add another address"}
+              {addressId ? "Изменить адрес" : "Добавить другой адрес"}
             </p>
             <div className="flex flex-col gap-4 md:gap-8 mb-8 md:mb-10">
               <div className="flex max-xs:flex-col gap-4 md:gap-6">
                 <InputField
-                  placeholder="First name"
+                  placeholder="Имя"
                   name="first_name"
                   className=" flex-1"
                   inputProps={{
@@ -82,7 +82,7 @@ export const UpsertAddressForm = withReactQueryProvider<{
                   }}
                 />
                 <InputField
-                  placeholder="Last name"
+                  placeholder="Фамилия"
                   name="last_name"
                   className=" flex-1"
                   inputProps={{
@@ -91,7 +91,7 @@ export const UpsertAddressForm = withReactQueryProvider<{
                 />
               </div>
               <InputField
-                placeholder="Company (Optional)"
+                placeholder="Компания (Необязательно)"
                 name="company"
                 className=" flex-1"
                 inputProps={{
@@ -99,21 +99,21 @@ export const UpsertAddressForm = withReactQueryProvider<{
                 }}
               />
               <InputField
-                placeholder="Address"
+                placeholder="Адрес"
                 name="address_1"
                 inputProps={{
                   autoComplete: "address-line1",
                 }}
               />
               <InputField
-                placeholder="Apartment, suite, etc. (Optional)"
+                placeholder="Квартира, офис и т.д. (Необязательно)"
                 name="address_2"
                 inputProps={{
                   autoComplete: "address-line2",
                 }}
               />
               <InputField
-                placeholder="Phone (Optional)"
+                placeholder="Телефон (Необязательно)"
                 name="phone"
                 type="tel"
                 inputProps={{
@@ -122,7 +122,7 @@ export const UpsertAddressForm = withReactQueryProvider<{
               />
               <div className="flex max-xs:flex-col gap-4 md:gap-6">
                 <InputField
-                  placeholder="Postal code"
+                  placeholder="Почтовый индекс"
                   name="postal_code"
                   className=" flex-1"
                   inputProps={{
@@ -130,7 +130,7 @@ export const UpsertAddressForm = withReactQueryProvider<{
                   }}
                 />
                 <InputField
-                  placeholder="City"
+                  placeholder="Город"
                   name="city"
                   className=" flex-1"
                   inputProps={{ autoComplete: "address-level2" }}
@@ -138,7 +138,7 @@ export const UpsertAddressForm = withReactQueryProvider<{
               </div>
               <div className="flex max-xs:flex-col gap-4 md:gap-6">
                 <InputField
-                  placeholder="Province (Optional)"
+                  placeholder="Область (Необязательно)"
                   name="province"
                   className=" flex-1"
                   inputProps={{ autoComplete: "address-level1" }}
@@ -161,9 +161,9 @@ export const UpsertAddressForm = withReactQueryProvider<{
             </div>
             <div className="flex gap-6 justify-between">
               <SubmitButton isLoading={isPending} isDisabled={isDisabled}>
-                {addressId ? "Save changes" : "Add address"}
+                {addressId ? "Сохранить изменения" : "Добавить адрес"}
               </SubmitButton>
-              <UiCloseButton variant="outline">Cancel</UiCloseButton>
+              <UiCloseButton variant="outline">Отмена</UiCloseButton>
             </div>
           </>
         )

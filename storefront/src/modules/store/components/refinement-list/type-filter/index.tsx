@@ -21,7 +21,7 @@ export const TypeFilter: React.FC<{
 }> = ({ type, types, setQueryParams }) => (
   <UiDialogTrigger>
     <UiSelectButton className="w-35">
-      <span>Type</span>
+      <span>Тип</span>
       <UiSelectIcon />
     </UiSelectButton>
     <ReactAria.Popover className="w-64" placement="bottom left">
@@ -31,7 +31,7 @@ export const TypeFilter: React.FC<{
           onChange={(value) => {
             setQueryParams("type", value)
           }}
-          className="max-h-50 overflow-scroll"
+          className="max-h-50 overflow-scroll no-scrollbar"
         >
           {Object.entries(types).map(([key, value]) => (
             <UiCheckbox value={key} className="p-4" key={key}>

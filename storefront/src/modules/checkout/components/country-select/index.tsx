@@ -19,7 +19,7 @@ export type CountrySelectProps = ReactAria.SelectProps<
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({
-  placeholder = "Country",
+  placeholder = "Страна",
   region,
   ...props
 }) => {
@@ -36,7 +36,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
 
   return (
     <ReactAria.Select
-      aria-label="Select country"
+      aria-label="Выберите страну"
       {...props}
       placeholder={placeholder}
     >

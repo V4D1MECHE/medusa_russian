@@ -20,25 +20,25 @@ export const CategoryFilter: React.FC<{
   setQueryParams: (name: string, value: string[]) => void
 }> = ({ category, categories, setQueryParams }) => (
   <UiDialogTrigger>
-    <UiSelectButton className="w-35">
-      <span>Category</span>
+    <UiSelectButton className="w-35 rounded-md">
+      <span>Категория</span>
       <UiSelectIcon />
     </UiSelectButton>
-    <ReactAria.Popover className="w-64" placement="bottom left">
-      <UiSelectDialog>
+    <ReactAria.Popover className="w-64 rounded-md" placement="bottom left">
+      <UiSelectDialog className="rounded-md">
         <ReactAria.CheckboxGroup
           value={category ?? []}
           onChange={(value) => {
             setQueryParams("category", value)
           }}
-          className="max-h-50 overflow-scroll"
+          className="max-h-50 rounded-md overflow-scroll no-scrollbar"
         >
           {Object.entries(categories).map(([key, value]) => (
-            <UiCheckbox value={key} className="p-4" key={key}>
-              <UiCheckboxBox>
+            <UiCheckbox value={key} className="p-4 rounded-md" key={key}>
+              <UiCheckboxBox className="rounded-md">
                 <UiCheckboxIcon />
               </UiCheckboxBox>
-              <UiCheckboxLabel>{value}</UiCheckboxLabel>
+              <UiCheckboxLabel className="rounded-md">{value}</UiCheckboxLabel>
             </UiCheckbox>
           ))}
         </ReactAria.CheckboxGroup>

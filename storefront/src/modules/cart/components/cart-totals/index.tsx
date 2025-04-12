@@ -36,7 +36,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({
         )}
       >
         <div className="flex justify-between">
-          <p className="text-grayscale-500">Subtotal:</p>
+          <p className="text-grayscale-500">Подытог:</p>
           <p
             className="self-end"
             data-testid="cart-subtotal"
@@ -47,7 +47,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({
         </div>
         {!!discount_total && (
           <div className="flex justify-between">
-            <p className="text-grayscale-500">Discount:</p>
+            <p className="text-grayscale-500">Скидка:</p>
             <p
               className="self-end"
               data-testid="cart-discount"
@@ -59,7 +59,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({
           </div>
         )}
         <div className="flex justify-between">
-          <p className="text-grayscale-500">Shipping:</p>
+          <p className="text-grayscale-500">Доставка:</p>
           <p
             className="self-end"
             data-testid="cart-shipping"
@@ -69,7 +69,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({
           </p>
         </div>
         <div className="flex justify-between">
-          <p className="text-grayscale-500">Taxes:</p>
+          <p className="text-grayscale-500">Налоги:</p>
           <p
             className="self-end"
             data-testid="cart-taxes"
@@ -80,7 +80,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({
         </div>
         {!!gift_card_total && (
           <div className="flex justify-between">
-            <p className="text-grayscale-500">Gift card:</p>
+            <p className="text-grayscale-500">Подарочная карта:</p>
             <p
               className="self-end"
               data-testid="cart-gift-card-amount"
@@ -99,7 +99,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({
         )}
       />
       <div className="flex justify-between text-md font-semibold">
-        <p>Total:</p>
+        <p>Итого:</p>
         <p data-testid="cart-total" data-value={total || 0}>
           {convertToLocale({ amount: total ?? 0, currency_code })}
         </p>

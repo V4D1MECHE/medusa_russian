@@ -17,7 +17,7 @@ export const AddressSingle: React.FC<{
   return (
     <div
       className={twMerge(
-        "w-full border border-grayscale-200 rounded-xs p-4 flex flex-wrap gap-8 max-lg:flex-col",
+        "w-full border border-grayscale-200 rounded-lg p-4 flex flex-wrap gap-8 max-lg:flex-col",
         className
       )}
     >
@@ -30,11 +30,11 @@ export const AddressSingle: React.FC<{
         <div className="flex flex-col gap-8 flex-1">
           <div className="flex flex-wrap justify-between gap-6">
             <div className="sm:grow sm:basis-0">
-              <p className="text-xs text-grayscale-500 mb-1.5">Address</p>
+              <p className="text-xs text-grayscale-500 mb-1.5">Адрес</p>
               <p>{address.address_1}</p>
             </div>
             <div className="sm:grow sm:basis-0">
-              <p className="text-xs text-grayscale-500 mb-1.5">Country</p>
+              <p className="text-xs text-grayscale-500 mb-1.5">Страна</p>
               <p>
                 {countries.find(
                   (country) => country.iso_2 === address.country_code
@@ -45,18 +45,18 @@ export const AddressSingle: React.FC<{
           {Boolean(address.address_2) && (
             <div>
               <p className="text-xs text-grayscale-500 mb-1.5">
-                Apartment, suite, etc.
+                Квартира, офис и т.д.
               </p>
               <p>{address.address_2}</p>
             </div>
           )}
           <div className="flex flex-wrap justify-between gap-6">
             <div className="sm:grow sm:basis-0">
-              <p className="text-xs text-grayscale-500 mb-1.5">Postal Code</p>
+              <p className="text-xs text-grayscale-500 mb-1.5">Почтовый индекс</p>
               <p>{address.postal_code}</p>
             </div>
             <div className="sm:grow sm:basis-0">
-              <p className="text-xs text-grayscale-500 mb-1.5">City</p>
+              <p className="text-xs text-grayscale-500 mb-1.5">Город</p>
               <p>{address.city}</p>
             </div>
           </div>
@@ -69,23 +69,23 @@ export const AddressSingle: React.FC<{
             size="sm"
             variant="outline"
             className="w-8 px-0 shrink-0"
-            aria-label="Delete address"
+            aria-label="Удалить адрес"
           />
           <UiModalOverlay>
             <UiModal>
               <UiDialog className="text-center">
                 <p className="text-md mb-8">
-                  Do you want to delete this address?
+                  Вы хотите удалить этот адрес?
                 </p>
                 <div className="flex gap-6 justify-center">
                   <DeleteAddressButton
                     addressId={address.id}
                     className="max-w-42 w-full"
                   >
-                    Confirm
+                    Подтвердить
                   </DeleteAddressButton>
                   <UiCloseButton variant="outline" className="max-w-42 w-full">
-                    Cancel
+                    Отмена
                   </UiCloseButton>
                 </div>
               </UiDialog>
@@ -94,7 +94,7 @@ export const AddressSingle: React.FC<{
         </UiDialogTrigger>
         <UiDialogTrigger>
           <Button variant="outline" size="sm" className="shrink-0">
-            Change
+            Изменить
           </Button>
           <UiModalOverlay>
             <UiModal>

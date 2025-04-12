@@ -25,13 +25,13 @@ export const SignUpForm = withReactQueryProvider(() => {
           <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-16">
             <div className="flex gap-4 md:gap-6">
               <InputField
-                placeholder="First name"
+                placeholder="Имя"
                 name="first_name"
                 className=" flex-1"
                 inputProps={{ autoComplete: "given-name" }}
               />
               <InputField
-                placeholder="Last name"
+                placeholder="Фамилия"
                 name="last_name"
                 className=" flex-1"
                 inputProps={{ autoComplete: "family-name" }}
@@ -45,21 +45,21 @@ export const SignUpForm = withReactQueryProvider(() => {
               inputProps={{ autoComplete: "email" }}
             />
             <InputField
-              placeholder="Phone"
+              placeholder="Телефон"
               name="phone"
               className=" flex-1"
               type="tel"
               inputProps={{ autoComplete: "tel" }}
             />
             <InputField
-              placeholder="Password"
+              placeholder="Пароль"
               name="password"
               type="password"
               className=" flex-1"
               inputProps={{ autoComplete: "new-password" }}
             />
             <InputField
-              placeholder="Confirm password"
+              placeholder="Подтвердите пароль"
               name="confirm_password"
               type="password"
               className=" flex-1"
@@ -69,7 +69,7 @@ export const SignUpForm = withReactQueryProvider(() => {
               <p className="text-red-primary text-sm">{data.error}</p>
             )}
             <SubmitButton isDisabled={isDisabled} isPending={isPending}>
-              Register
+              Зарегистрироваться
             </SubmitButton>
           </div>
         )

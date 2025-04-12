@@ -1,21 +1,21 @@
 import * as React from "react"
 import { listRegions } from "@lib/data/regions"
 import { retrieveCart } from "@lib/data/cart"
-import { SearchField } from "@/components/SearchField"
+// import { SearchField } from "@/components/SearchField"
 import { CartDrawer } from "@/components/CartDrawer"
 import { Layout, LayoutColumn } from "@/components/Layout"
 import { LocalizedLink } from "@/components/LocalizedLink"
 import { CartIcon } from "@/components/CartIcon"
 import { HeaderDrawer } from "@/components/HeaderDrawer"
-import { RegionSwitcher } from "@/components/RegionSwitcher"
+// import { RegionSwitcher } from "@/components/RegionSwitcher"
 import { HeaderWrapper } from "@/components/HeaderWrapper"
 
-import dynamic from "next/dynamic"
+// import dynamic from "next/dynamic"
 
-const LoginLink = dynamic(
-  () => import("@modules/header/components/LoginLink"),
-  { loading: () => <></> }
-)
+// const LoginLink = dynamic(
+//   () => import("@modules/header/components/LoginLink"),
+//   { loading: () => <></> }
+// )
 
 export const Header: React.FC = async () => {
   const regions = await listRegions()
@@ -39,28 +39,28 @@ export const Header: React.FC = async () => {
           <LayoutColumn>
             <div className="flex justify-between items-center h-18 md:h-21">
               <h1 className="font-medium text-md">
-                <LocalizedLink href="/">SofaSocietyCo.</LocalizedLink>
+                <LocalizedLink href="/">MiLi</LocalizedLink>
               </h1>
-              <div className="flex items-center gap-8 max-md:hidden">
-                <LocalizedLink href="/about">About</LocalizedLink>
-                <LocalizedLink href="/inspiration">Inspiration</LocalizedLink>
-                <LocalizedLink href="/store">Shop</LocalizedLink>
+              <div className="flex items-center gap-16 max-md:hidden me-4">
+                <LocalizedLink href="/about">О нас</LocalizedLink>
+                <LocalizedLink href="/inspiration">Вдохновение</LocalizedLink>
+                <LocalizedLink href="/store">Магазин</LocalizedLink>
               </div>
               <div className="flex items-center gap-3 lg:gap-6 max-md:hidden">
-                <RegionSwitcher
+                {/* <RegionSwitcher
                   countryOptions={countryOptions}
                   className="w-16"
                   selectButtonClassName="h-auto !gap-0 !p-1 transition-none"
                   selectIconClassName="text-current"
-                />
-                <SearchField countryOptions={countryOptions} />
-                <LoginLink className="p-1 group-data-[light=true]:md:text-white group-data-[sticky=true]:md:text-black" />
+                /> */}
+                {/* <SearchField countryOptions={countryOptions} /> */}
+                {/* <LoginLink className="p-1 group-data-[light=true]:md:text-white group-data-[sticky=true]:md:text-black" /> */}
                 <CartDrawer cart={cart}>
                   <CartIcon className="w-6 h-6" />
                 </CartDrawer>
               </div>
               <div className="flex items-center gap-4 md:hidden">
-                <LoginLink className="p-1 group-data-[light=true]:md:text-white" />
+                {/* <LoginLink className="p-1 group-data-[light=true]:md:text-white" /> */}
 
                 <CartDrawer cart={cart}>
                   <CartIcon className="w-6 h-6" wrapperClassName="w-6 h-6" />

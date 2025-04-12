@@ -15,10 +15,10 @@ export const OrderTotals: React.FC<{
   } = order
 
   return (
-    <div className="sm:max-w-65 w-full flex-1">
-      <div className="flex justify-between gap-4 mb-2">
+    <div className="sm:max-w-65 w-full flex-1 rounded-md">
+      <div className="flex justify-between gap-4 mb-2 rounded-md">
         <div className="text-grayscale-500">
-          <p>Subtotal</p>
+          <p>Подытог</p>
         </div>
         <div className="self-end">
           <p>
@@ -30,9 +30,9 @@ export const OrderTotals: React.FC<{
         </div>
       </div>
       {!!discount_total && (
-        <div className="flex justify-between gap-4 mb-2">
+        <div className="flex justify-between gap-4 mb-2 rounded-md">
           <div className="text-grayscale-500">
-            <p>Discount</p>
+            <p>Скидка</p>
           </div>
           <div className="self-end">
             <p>
@@ -42,9 +42,9 @@ export const OrderTotals: React.FC<{
           </div>
         </div>
       )}
-      <div className="flex justify-between gap-4 mb-2">
+      <div className="flex justify-between gap-4 mb-2 rounded-md">
         <div className="text-grayscale-500">
-          <p>Shipping</p>
+          <p>Доставка</p>
         </div>
         <div className="self-end">
           <p>
@@ -56,9 +56,9 @@ export const OrderTotals: React.FC<{
         </div>
       </div>
       {!!gift_card_total && (
-        <div className="flex justify-between gap-4 mb-2">
+        <div className="flex justify-between gap-4 mb-2 rounded-md">
           <div className="text-grayscale-500">
-            <p>Gift card</p>
+            <p>Подарочная карта</p>
           </div>
           <div className="self-end">
             <p>
@@ -68,9 +68,9 @@ export const OrderTotals: React.FC<{
           </div>
         </div>
       )}
-      <div className="flex justify-between gap-4 text-md mb-1 mt-6">
+      <div className="flex justify-between gap-4 text-md mb-1 mt-6 rounded-md">
         <div>
-          <p>Total</p>
+          <p>Итого</p>
         </div>
         <div className="self-end">
           <p>
@@ -81,9 +81,9 @@ export const OrderTotals: React.FC<{
           </p>
         </div>
       </div>
-      <p className="text-xs text-grayscale-500">
-        Including {convertToLocale({ amount: tax_total ?? 0, currency_code })}{" "}
-        tax
+      <p className="text-xs text-grayscale-500 rounded-md">
+        Включая {convertToLocale({ amount: tax_total ?? 0, currency_code })}{" "}
+        налога
       </p>
     </div>
   )

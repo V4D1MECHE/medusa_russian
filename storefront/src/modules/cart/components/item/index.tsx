@@ -55,7 +55,7 @@ const Item = ({ item, className }: ItemProps) => {
             thumbnail={item.variant?.product?.thumbnail}
             images={item.variant?.product?.images}
             size="3/4"
-            className="w-25 sm:w-30"
+            className="w-25 sm:w-30 rounded-lg"
           />
         </LocalizedLink>
         <div className="flex-grow flex flex-col justify-between">
@@ -78,7 +78,7 @@ const Item = ({ item, className }: ItemProps) => {
             onChange={(value) => changeQuantity(value)}
             isDisabled={updating}
             className="w-25"
-            aria-label="Quantity"
+            aria-label="Количество"
           />
         </div>
         <div className="flex flex-col justify-between items-end text-right">

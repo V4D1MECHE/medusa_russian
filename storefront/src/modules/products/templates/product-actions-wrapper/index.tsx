@@ -32,6 +32,8 @@ export default async function ProductActionsWrapper({
   }
 
   return (
-    <ProductActions product={product} materials={materials} region={region} />
+    <div className="rounded-md">
+      <ProductActions product={product} materials={materials} region={region} />
+    </div>
   )
 }

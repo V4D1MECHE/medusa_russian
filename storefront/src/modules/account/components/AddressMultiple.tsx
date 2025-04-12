@@ -16,17 +16,17 @@ export const AddressMultiple: React.FC<{
   return (
     <div
       className={twMerge(
-        "border border-grayscale-200 rounded-xs py-4 px-6 flex flex-col gap-8 break-all",
+        "border border-grayscale-200 rounded-lg py-4 px-6 flex flex-col gap-8 break-all",
         className
       )}
     >
       <div className="flex flex-wrap justify-between gap-8">
         <div>
-          <p className="text-xs text-grayscale-500 mb-1.5">Address</p>
+          <p className="text-xs text-grayscale-500 mb-1.5">Адрес</p>
           <p>{address.address_1}</p>
         </div>
         <div>
-          <p className="text-xs text-grayscale-500 mb-1.5">Country</p>
+          <p className="text-xs text-grayscale-500 mb-1.5">Страна</p>
           <p>
             {countries.find((country) => country.iso_2 === address.country_code)
               ?.display_name || address.country_code}
@@ -36,18 +36,18 @@ export const AddressMultiple: React.FC<{
       {Boolean(address.address_2) && (
         <div>
           <p className="text-xs text-grayscale-500 mb-1.5">
-            Apartment, suite, etc.
+            Квартира, офис и т.д.
           </p>
           <p>{address.address_2}</p>
         </div>
       )}
       <div className="flex flex-wrap justify-between gap-8">
         <div>
-          <p className="text-xs text-grayscale-500 mb-1.5">Postal Code</p>
+          <p className="text-xs text-grayscale-500 mb-1.5">Почтовый индекс</p>
           <p>{address.postal_code}</p>
         </div>
         <div>
-          <p className="text-xs text-grayscale-500 mb-1.5">City</p>
+          <p className="text-xs text-grayscale-500 mb-1.5">Город</p>
           <p>{address.city}</p>
         </div>
       </div>
@@ -58,19 +58,19 @@ export const AddressMultiple: React.FC<{
             size="sm"
             variant="outline"
             className="w-8 px-0 shrink-0"
-            aria-label="Delete address"
+            aria-label="Удалить адрес"
           />
           <UiModalOverlay>
             <UiModal>
               <UiDialog className="text-center">
                 <p className="text-md mb-8">
-                  Do you want to delete this address?
+                  Вы хотите удалить этот адрес?
                 </p>
                 <div className="flex gap-6 justify-center">
                   <DeleteAddressButton addressId={address.id}>
-                    Confirm
+                    Подтвердить
                   </DeleteAddressButton>
-                  <UiCloseButton variant="outline">Cancel</UiCloseButton>
+                  <UiCloseButton variant="outline">Отмена</UiCloseButton>
                 </div>
               </UiDialog>
             </UiModal>
@@ -78,7 +78,7 @@ export const AddressMultiple: React.FC<{
         </UiDialogTrigger>
         <UiDialogTrigger>
           <Button variant="outline" size="sm" className="shrink-0">
-            Change
+            Изменить
           </Button>
           <UiModalOverlay>
             <UiModal>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 module.exports = {
   darkMode: "class",
   content: [
@@ -177,5 +178,5 @@ module.exports = {
       variants: ["xs", "sm", "md", "lg", "xl"],
     },
   ],
-  plugins: [require("tailwindcss-radix"), require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-radix"), require("tailwindcss-animate"), require("tailwind-scrollbar-hide")],
 }

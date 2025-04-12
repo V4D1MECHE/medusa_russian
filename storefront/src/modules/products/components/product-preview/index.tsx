@@ -18,35 +18,35 @@ export default function ProductPreview({
       (cheapestPrice?.original_price_number || 0)
 
   return (
-    <LocalizedLink href={`/products/${product.handle}`}>
+    <LocalizedLink href={`/products/${product.handle}`} className="rounded-md overflow-hidden">
       <Thumbnail
         thumbnail={product.thumbnail}
         images={product.images}
         size="square"
         className="mb-4 md:mb-6"
       />
-      <div className="flex justify-between max-md:flex-col">
+      <div className="flex justify-between max-md:flex-col rounded-md">
         <div className="max-md:text-xs">
-          <p className="mb-1">{product.title}</p>
+          <p className="mb-1 rounded-md">{product.title}</p>
           {product.collection && (
-            <p className="text-grayscale-500 text-xs max-md:hidden">
+            <p className="text-grayscale-500 text-xs max-md:hidden rounded-md">
               {product.collection.title}
             </p>
           )}
         </div>
         {cheapestPrice ? (
           hasReducedPrice ? (
-            <div>
-              <p className="font-semibold max-md:text-xs text-red-primary">
+            <div className="rounded-md">
+              <p className="font-semibold max-md:text-xs text-red-primary rounded-md">
                 {cheapestPrice.calculated_price}
               </p>
-              <p className="max-md:text-xs text-grayscale-500 line-through">
+              <p className="max-md:text-xs text-grayscale-500 line-through rounded-md">
                 {cheapestPrice.original_price}
               </p>
             </div>
           ) : (
-            <div>
-              <p className="font-semibold max-md:text-xs">
+            <div className="rounded-md">
+              <p className="font-semibold max-md:text-xs rounded-md">
                 {cheapestPrice.calculated_price}
               </p>
             </div>

@@ -29,8 +29,9 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
       <UiRadioLabel>
         {paymentInfoMap[paymentProviderId]?.title || paymentProviderId}
 
-        {isManual(paymentProviderId) && isDevelopment && <PaymentTest />}
+        
       </UiRadioLabel>
+      {isManual(paymentProviderId) && isDevelopment && <PaymentTest />}
       <span className="ml-auto group-data-[selected=true]:font-normal">
         {paymentInfoMap[paymentProviderId]?.icon}
       </span>

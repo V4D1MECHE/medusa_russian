@@ -116,14 +116,14 @@ export const SearchField: React.FC<{
         onPress={buttonPressHandle}
         variant="ghost"
         className="p-1 max-md:text-white group-data-[light=true]:md:text-white group-data-[sticky=true]:md:text-black"
-        aria-label="Open search"
+        aria-label="Открыть поиск"
       >
         <Icon name="search" className="w-5 h-5" />
       </Button>
       <ReactAria.ComboBox
         allowsCustomValue
         className="overflow-hidden"
-        aria-label="Search"
+        aria-label="Поиск"
         items={list.items}
         inputValue={list.filterText}
         onInputChange={list.setFilterText}
@@ -143,7 +143,7 @@ export const SearchField: React.FC<{
           containerPadding={10}
           maxHeight={243}
           offset={25}
-          className="max-w-90 md:max-w-95 lg:max-w-98 w-full bg-white rounded-xs border border-grayscale-200 overflow-y-scroll"
+          className="max-w-90 md:max-w-95 lg:max-w-98 w-full bg-white rounded-lg border border-grayscale-200 overflow-y-scroll"
         >
           <ReactAria.ListBox className="outline-none">
             {(item: ListItem) => (

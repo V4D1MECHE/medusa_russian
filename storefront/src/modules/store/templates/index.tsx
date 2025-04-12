@@ -38,9 +38,10 @@ const StoreTemplate = async ({
   const region = await getRegion(countryCode)
 
   return (
-    <div className="md:pt-47 py-26 md:pb-36">
-      <CollectionsSlider />
+    <div className="md:pt-47 py-26 md:pb-36 rounded-md">
+      <CollectionsSlider heading="Коллекции" />
       <RefinementList
+        title="Магазин"
         collections={Object.fromEntries(
           collections.collections.map((c) => [c.handle, c.title])
         )}

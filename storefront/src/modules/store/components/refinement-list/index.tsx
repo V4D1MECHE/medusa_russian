@@ -26,7 +26,7 @@ type RefinementListProps = {
 }
 
 const RefinementList = ({
-  title = "Shop",
+  title = "Магазин",
   collections,
   collection,
   categories,
@@ -77,10 +77,10 @@ const RefinementList = ({
   return (
     <Layout className="mb-6 md:mb-8">
       <LayoutColumn>
-        <h2 className="text-md md:text-2xl mb-6 md:mb-7" id="products">
+        <h2 className="text-md md:text-2xl mb-6 md:mb-7 rounded-md" id="products">
           {title}
         </h2>
-        <div className="flex justify-between gap-10">
+        <div className="flex justify-between gap-10 rounded-md">
           <MobileFilters
             collections={collections}
             collection={collection}
@@ -91,7 +91,7 @@ const RefinementList = ({
             setMultipleQueryParams={setMultipleQueryParams}
           />
           <MobileSort sortBy={sortBy} setQueryParams={setQueryParams} />
-          <div className="flex justify-between gap-4 max-md:hidden">
+          <div className="flex justify-between gap-4 max-md:hidden rounded-md">
             {typeof collections !== "undefined" && (
               <CollectionFilter
                 collections={collections}

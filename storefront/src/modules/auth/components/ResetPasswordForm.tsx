@@ -33,7 +33,7 @@ const resetPasswordFormSchema = baseSchema.superRefine((data, ctx) => {
   if (data.new_password !== data.confirm_new_password) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
-      message: "Passwords must match",
+      message: "Пароли должны совпадать",
       path: ["confirm_new_password"],
     })
   }
@@ -41,7 +41,7 @@ const resetPasswordFormSchema = baseSchema.superRefine((data, ctx) => {
   if (data.type === "reset" && data.current_password === data.new_password) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
-      message: "New password must be different from the current password",
+      message: "Новый пароль должен отличаться от текущего пароля",
       path: ["new_password"],
     })
   }
@@ -76,25 +76,25 @@ export const ChangePasswordForm: React.FC<{
         schema={resetPasswordFormSchema}
         defaultValues={customer ? { type: "reset" } : { type: "forgot" }}
       >
-        <h1 className="text-lg mb-6 md:mb-8">Reset password</h1>
+        <h1 className="text-lg mb-6 md:mb-8">Сброс пароля</h1>
         <div className="flex flex-col gap-4 mb-6 md:mb-8">
           {customer && (
             <InputField
               type="password"
-              placeholder="Current password"
+              placeholder="Текущий пароль"
               name="current_password"
               inputProps={{ autoComplete: "current-password" }}
             />
           )}
           <InputField
             type="password"
-            placeholder="New password"
+            placeholder="Новый пароль"
             name="new_password"
             inputProps={{ autoComplete: "new-password" }}
           />
           <InputField
             type="password"
-            placeholder="Confirm new password"
+            placeholder="Подтвердите новый пароль"
             name="confirm_new_password"
             inputProps={{ autoComplete: "new-password" }}
           />
@@ -103,7 +103,7 @@ export const ChangePasswordForm: React.FC<{
           <p className="text-red-primary text-sm mb-6">{formState.error}</p>
         )}
         <SubmitButton isLoading={isPending} isFullWidth>
-          Reset password
+          Сбросить пароль
         </SubmitButton>
       </Form>
       <UiModalOverlay
@@ -114,10 +114,9 @@ export const ChangePasswordForm: React.FC<{
       >
         <UiModal className="relative">
           <UiDialog>
-            <p className="text-md mb-12">Password reset successful!</p>
+            <p className="text-md mb-12">Пароль успешно сброшен!</p>
             <p className="text-grayscale-500">
-              Your password has been successfully reset. You may now use your
-              new password to log in.
+              Ваш пароль был успешно сброшен. Теперь вы можете использовать новый пароль для входа в систему.
             </p>
             <UiCloseButton
               variant="ghost"

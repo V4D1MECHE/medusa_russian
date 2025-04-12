@@ -23,12 +23,12 @@ export const DefaultShippingAddressSelect: React.FC<{
   return (
     <>
       <p className="text-xs text-grayscale-500 mb-1.5">
-        Default shipping address
+        Адрес доставки по умолчанию
       </p>
       <ReactAria.Select
-        aria-label="Select default shipping address"
+        aria-label="Выберите адрес доставки по умолчанию"
         defaultSelectedKey={addresses.find((i) => i.is_default_shipping)?.id}
-        placeholder="Select default shipping address"
+        placeholder="Выберите адрес доставки по умолчанию"
         className="mb-8"
         onSelectionChange={(key) => {
           if (typeof key === "string") {

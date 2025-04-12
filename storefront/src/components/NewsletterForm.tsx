@@ -17,15 +17,15 @@ export const NewsletterForm: React.FC<{ className?: string }> = ({
 
   return (
     <div className={className}>
-      <h2 className="text-md md:text-lg mb-2 md:mb-1">Join our newsletter</h2>
+      <h2 className="text-md md:text-lg mb-2 md:mb-1">Подпишитесь на нашу рассылку</h2>
       {isSubmitted ? (
         <p className="max-md:text-xs">
-          Thank you for subscribing to our newsletter!
+          Спасибо за подписку на нашу рассылку!
         </p>
       ) : (
         <>
           <p className="max-md:text-xs mb-4">
-            We will also send you our discount coupons!
+            Мы также будем отправлять вам наши скидочные купоны!
           </p>
           <Form
             onSubmit={() => {
@@ -37,29 +37,29 @@ export const NewsletterForm: React.FC<{ className?: string }> = ({
               <InputField
                 inputProps={{
                   uiSize: "sm",
-                  className: "rounded-xs",
+                  className: "rounded-lg",
                   autoComplete: "email",
                 }}
                 name="email"
                 type="email"
-                placeholder="Your email"
+                placeholder="Ваш email"
                 className="mb-4 flex-1"
               />
               <Button type="submit" size="sm" className="h-9 text-xs">
-                Subscribe
+                Подписаться
               </Button>
             </div>
           </Form>
           <p className="text-xs text-grayscale-500">
-            By subscribing you agree to with our{" "}
+            Подписываясь, вы соглашаетесь с нашей{" "}
             <LocalizedLink
               href="/privacy-policy"
               variant="underline"
               className="!pb-0"
             >
-              Privacy Policy
+              Политикой конфиденциальности
             </LocalizedLink>{" "}
-            and provide consent to receive updates from our company.
+            и даете согласие на получение обновлений от нашей компании.
           </p>
         </>
       )}

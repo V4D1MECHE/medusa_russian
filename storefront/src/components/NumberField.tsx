@@ -12,7 +12,7 @@ export const NumberField: React.FC<
   <ReactAria.NumberField
     {...rest}
     className={twMerge(
-      "flex justify-between border border-grayscale-200 rounded-xs",
+      "flex justify-between border border-grayscale-200 rounded-lg",
       size === "sm" ? "h-8 px-4" : "h-12 px-6",
       className as string
     )}

@@ -33,7 +33,7 @@ export const RequestPasswordResetButton: React.FC = () => {
             const result = await requestPasswordReset().catch((error) => {
               console.error(error)
 
-              return { success: false, error: "Something went wrong" }
+              return { success: false, error: "Что-то пошло не так" }
             })
 
             if (result.success) {
@@ -46,15 +46,14 @@ export const RequestPasswordResetButton: React.FC = () => {
           }}
           className="max-sm:w-full"
         >
-          Reset password
+          Сбросить пароль
         </Button>
         <UiModalOverlay isDismissable={false} className="bg-transparent">
           <UiModal className="relative">
             <UiDialog>
-              <p className="text-md mb-12">Reset password</p>
+              <p className="text-md mb-12">Сброс пароля</p>
               <p className="text-grayscale-500">
-                We have sent an email with instructions on how to change the
-                password.
+                Мы отправили на ваш email инструкции по изменению пароля.
               </p>
               <UiCloseButton
                 variant="ghost"

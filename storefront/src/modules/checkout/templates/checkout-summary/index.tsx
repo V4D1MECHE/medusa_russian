@@ -41,11 +41,11 @@ const CheckoutSummary = ({ cart }: { cart: HttpTypes.StoreCart }) => {
       <div className="flex justify-between items-center mb-8 lg:mb-16">
         <div>
           <p>
-            Order — {numOfItems} item{numOfItems > 1 ? "s" : ""}
+            Заказ — {numOfItems} товар{numOfItems > 1 ? "ов" : numOfItems === 0 ? "ов" : ""}
           </p>
         </div>
         <LocalizedButtonLink href="/cart" variant="link">
-          Edit cart
+          Изменить корзину
         </LocalizedButtonLink>
       </div>
       {numOfItems > 0 &&
@@ -62,7 +62,7 @@ const CheckoutSummary = ({ cart }: { cart: HttpTypes.StoreCart }) => {
                   thumbnail={item.variant?.product?.thumbnail}
                   images={item.variant?.product?.images}
                   size="3/4"
-                  className="w-25 lg:w-33"
+                  className="w-25 lg:w-33 rounded-lg"
                 />
               </LocalizedLink>
               <div className="flex flex-col flex-1 justify-between">
@@ -80,12 +80,12 @@ const CheckoutSummary = ({ cart }: { cart: HttpTypes.StoreCart }) => {
                 <div className="flex flex-col gap-1.5 max-lg:text-xs">
                   {item.variant?.title && (
                     <p>
-                      Variant:{" "}
+                      Вариант:{" "}
                       <span className="ml-1">{item.variant.title}</span>
                     </p>
                   )}
                   <p>
-                    Quantity: <span className="ml-1">{item.quantity}</span>
+                    Количество: <span className="ml-1">{item.quantity}</span>
                   </p>
                 </div>
               </div>

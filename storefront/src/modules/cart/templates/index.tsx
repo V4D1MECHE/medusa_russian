@@ -4,7 +4,7 @@ import Summary from "@modules/cart/templates/summary"
 import { HttpTypes } from "@medusajs/types"
 import { Layout, LayoutColumn } from "@/components/Layout"
 
-// TODO: Ask customer if they want to sign in or continue as guest
+// TODO: Спросить клиента, хочет ли он войти или продолжить как гость
 const CartTemplate = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
   return (
     <Layout className="py-26 md:pb-36 md:pt-39">

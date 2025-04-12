@@ -22,14 +22,14 @@ export const MobileSort: React.FC<{
         variant="outline"
         iconName="chevron-down"
         iconPosition="end"
-        className="md:hidden border-grayscale-200"
+        className="md:hidden border-grayscale-200 rounded-md"
       >
-        Sort by
+        Сортировать по
       </Button>
       <UiModalOverlay className="p-0">
         <UiModal
           animateFrom="bottom"
-          className="w-full rounded-none max-w-full shadow-none pb-21"
+          className="w-full rounded-t-md max-w-full shadow-none pb-21"
         >
           <UiDialog>
             {({ close }) => (
@@ -45,30 +45,30 @@ export const MobileSort: React.FC<{
                 }}
               >
                 <UiRadioGroup
-                  className="flex flex-col mb-5"
+                  className="flex flex-col mb-5 rounded-md"
                   name="sortBy"
                   defaultValue={sortBy}
-                  aria-label="Sort by"
+                  aria-label="Сортировать по"
                 >
-                  <ReactAria.Label className="block text-md font-semibold mb-3">
-                    Sort by
+                  <ReactAria.Label className="block text-md font-semibold mb-3 rounded-md">
+                    Сортировать по
                   </ReactAria.Label>
-                  <UiRadio value="created_at" className="justify-between py-3">
-                    <UiRadioLabel>Latest Arrivals</UiRadioLabel>
-                    <UiRadioBox />
+                  <UiRadio value="created_at" className="justify-between py-3 rounded-md">
+                    <UiRadioLabel className="rounded-md">Новые поступления</UiRadioLabel>
+                    <UiRadioBox className="rounded-md" />
                   </UiRadio>
-                  <UiRadio value="price_asc" className="justify-between py-3">
-                    <UiRadioLabel>Lowest price</UiRadioLabel>
-                    <UiRadioBox />
+                  <UiRadio value="price_asc" className="justify-between py-3 rounded-md">
+                    <UiRadioLabel className="rounded-md">Низкая цена</UiRadioLabel>
+                    <UiRadioBox className="rounded-md" />
                   </UiRadio>
-                  <UiRadio value="price_desc" className="justify-between py-3">
-                    <UiRadioLabel>Highest price</UiRadioLabel>
-                    <UiRadioBox />
+                  <UiRadio value="price_desc" className="justify-between py-3 rounded-md">
+                    <UiRadioLabel className="rounded-md">Высокая цена</UiRadioLabel>
+                    <UiRadioBox className="rounded-md" />
                   </UiRadio>
                 </UiRadioGroup>
-                <footer className="flex items-center h-21 fixed bottom-0 left-0 w-full bg-white px-6 border-t border-grayscale-100">
-                  <Button type="submit" isFullWidth>
-                    Show results
+                <footer className="flex items-center h-21 fixed bottom-0 left-0 w-full bg-white px-6 border-t border-grayscale-100 rounded-b-md">
+                  <Button type="submit" isFullWidth className="rounded-md">
+                    Показать результаты
                   </Button>
                 </footer>
               </form>

@@ -5,8 +5,8 @@ import { Button } from "@/components/Button"
 import { Icon } from "@/components/Icon"
 import { Drawer } from "@/components/Drawer"
 import { LocalizedLink } from "@/components/LocalizedLink"
-import { RegionSwitcher } from "@/components/RegionSwitcher"
-import { SearchField } from "@/components/SearchField"
+// import { RegionSwitcher } from "@/components/RegionSwitcher"
+// import { SearchField } from "@/components/SearchField"
 import { useSearchParams } from "next/navigation"
 
 export const HeaderDrawer: React.FC<{
@@ -15,7 +15,7 @@ export const HeaderDrawer: React.FC<{
     region: string
     label: string | undefined
   }[]
-}> = ({ countryOptions }) => {
+}> = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   const searchParams = useSearchParams()
@@ -31,7 +31,7 @@ export const HeaderDrawer: React.FC<{
         variant="ghost"
         className="p-1 group-data-[light=true]:md:text-white"
         onPress={() => setIsMenuOpen(true)}
-        aria-label="Open menu"
+        aria-label="Открыть меню"
       >
         <Icon name="menu" className="w-6 h-6" wrapperClassName="w-6 h-6" />
       </Button>
@@ -45,11 +45,11 @@ export const HeaderDrawer: React.FC<{
           <>
             <div className="flex flex-col text-white h-full">
               <div className="flex items-center justify-between pb-6 mb-8 pt-5 w-full border-b border-white px-8">
-                <SearchField
+                {/* <SearchField
                   countryOptions={countryOptions}
                   isInputAlwaysShown
-                />
-                <button onClick={close} aria-label="Close menu">
+                /> */}
+                <button onClick={close} aria-label="Закрыть меню">
                   <Icon name="close" className="w-6" />
                 </button>
               </div>
@@ -58,27 +58,27 @@ export const HeaderDrawer: React.FC<{
                   href="/about"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  О нас
                 </LocalizedLink>
                 <LocalizedLink
                   href="/inspiration"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Inspiration
+                  Вдохновение
                 </LocalizedLink>
                 <LocalizedLink
                   href="/store"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Shop
+                  Магазин
                 </LocalizedLink>
               </div>
-              <RegionSwitcher
+              {/* <RegionSwitcher
                 countryOptions={countryOptions}
                 className="mt-auto ml-8 mb-8"
                 selectButtonClassName="max-md:text-base gap-2 p-1 w-auto"
                 selectIconClassName="text-current w-6 h-6"
-              />
+              /> */}
             </div>
           </>
         )}

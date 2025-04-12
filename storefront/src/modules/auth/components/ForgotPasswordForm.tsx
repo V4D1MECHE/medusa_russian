@@ -26,16 +26,15 @@ export const ForgotPasswordForm: React.FC = () => {
     return (
       <>
         <h1 className="text-xl md:text-2xl mb-8">
-          Your password is waiting for you!
+          Ваш пароль ждет вас!
         </h1>
         <div className="mb-8">
           <p>
-            We&apos;ve sent you an email with further instructions on retrieving
-            your account.
+            Мы отправили вам электронное письмо с дальнейшими инструкциями по восстановлению доступа к вашему аккаунту.
           </p>
         </div>
         <LocalizedButtonLink href="/" isFullWidth>
-          Back to home page
+          Вернуться на главную
         </LocalizedButtonLink>
       </>
     )
@@ -43,11 +42,10 @@ export const ForgotPasswordForm: React.FC = () => {
 
   return (
     <Form onSubmit={onSubmit} schema={forgotPasswordFormSchema}>
-      <h1 className="text-xl md:text-2xl mb-8">Forgot password?</h1>
+      <h1 className="text-xl md:text-2xl mb-8">Забыли пароль?</h1>
       <div className="mb-8">
         <p>
-          Enter your email address below and we will send you instructions on
-          how to reset your password.
+          Введите ваш email ниже, и мы отправим вам инструкции по сбросу пароля.
         </p>
       </div>
       <InputField
@@ -59,7 +57,7 @@ export const ForgotPasswordForm: React.FC = () => {
       {formState.state === "error" && (
         <p className="text-red-primary text-sm">{formState.error}</p>
       )}
-      <SubmitButton isFullWidth>Reset your password</SubmitButton>
+      <SubmitButton isFullWidth>Сбросить пароль</SubmitButton>
     </Form>
   )
 }

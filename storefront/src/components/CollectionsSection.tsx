@@ -19,7 +19,7 @@ export const CollectionsSection: React.FC<{ className?: string }> = async ({
 
   return (
     <Carousel
-      heading={<h3 className="text-md md:text-2xl">Collections</h3>}
+      heading={<h3 className="text-md md:text-2xl">Коллекции</h3>}
       button={
         <>
           <LocalizedButtonLink
@@ -27,10 +27,10 @@ export const CollectionsSection: React.FC<{ className?: string }> = async ({
             size="md"
             className="h-full flex-1 max-md:hidden md:h-auto"
           >
-            View All
+            Смотреть все
           </LocalizedButtonLink>
           <LocalizedButtonLink href="/store" size="sm" className="md:hidden">
-            View All
+            Смотреть все
           </LocalizedButtonLink>
         </>
       }
@@ -38,7 +38,7 @@ export const CollectionsSection: React.FC<{ className?: string }> = async ({
     >
       {collections.collections.map((collection) => (
         <div
-          className="w-[70%] sm:w-[60%] lg:w-full max-w-124 flex-shrink-0"
+          className="w-[50%] sm:w-[40%] lg:w-full max-w-96 flex-shrink-0"
           key={collection.id}
         >
           <LocalizedLink href={`/collections/${collection.handle}`}>
@@ -51,6 +51,7 @@ export const CollectionsSection: React.FC<{ className?: string }> = async ({
                     src={collection.metadata.image.url}
                     alt={collection.title}
                     fill
+                    className="rounded-lg"
                   />
                 </div>
               )}

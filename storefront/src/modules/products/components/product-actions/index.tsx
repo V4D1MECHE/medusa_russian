@@ -169,7 +169,7 @@ export default function ProductActions({
   return (
     <>
       <ProductPrice product={product} variant={selectedVariant} />
-      <div className="max-md:text-xs mb-8 md:mb-16 max-w-120">
+      <div className="max-md:text-xs mb-8 md:mb-16 max-w-120 rounded-md">
         <p>{product.description}</p>
       </div>
       {hasMultipleVariants && (
@@ -177,10 +177,10 @@ export default function ProductActions({
           {materialOption && colorOption && (
             <>
               <div>
-                <p className="mb-4">
-                  Materials
+                <p className="mb-4 rounded-md">
+                  Материалы
                   {options[materialOption.id] && (
-                    <span className="text-grayscale-500 ml-6">
+                    <span className="text-grayscale-500 ml-6 overflow-scroll no-scrollbar">
                       {options[materialOption.id]}
                     </span>
                   )}
@@ -190,21 +190,22 @@ export default function ProductActions({
                   onSelectionChange={(value) => {
                     setOptions({ [materialOption.id]: `${value}` })
                   }}
-                  placeholder="Choose material"
-                  className="w-full md:w-60"
+                  placeholder="Выберите материал"
+                  className="w-full md:w-60 no-scrollbar"
                   isDisabled={!!disabled || isAdding}
-                  aria-label="Material"
+                  aria-label="Материал"
                 >
-                  <UiSelectButton className="!h-12 px-4 gap-2 max-md:text-base">
+                  <UiSelectButton className="!h-12 px-4 gap-2 max-md:text-base rounded-md">
                     <UiSelectValue />
                     <UiSelectIcon className="h-6 w-6" />
                   </UiSelectButton>
-                  <ReactAria.Popover className="w-[--trigger-width]">
-                    <UiSelectListBox>
+                  <ReactAria.Popover className="w-[--trigger-width] rounded-md">
+                    <UiSelectListBox className="rounded-md no-scrollbar">
                       {materials.map((material) => (
                         <UiSelectListBoxItem
                           key={material.id}
                           id={material.name}
+                          className="rounded-sm"
                         >
                           {material.name}
                         </UiSelectListBoxItem>
@@ -215,8 +216,8 @@ export default function ProductActions({
               </div>
               {selectedMaterial && (
                 <div className="mb-6">
-                  <p className="mb-4">
-                    Colors
+                  <p className="mb-4 rounded-md">
+                    Цвета
                     <span className="text-grayscale-500 ml-6">
                       {options[colorOption.id]}
                     </span>
@@ -226,7 +227,7 @@ export default function ProductActions({
                     onChange={(value) => {
                       setOptionValue(colorOption.id, value)
                     }}
-                    aria-label="Color"
+                    aria-label="Цвет"
                     className="flex gap-6"
                     isDisabled={!!disabled || isAdding}
                   >
@@ -235,7 +236,7 @@ export default function ProductActions({
                         key={color.id}
                         value={color.name}
                         aria-label={color.name}
-                        className="h-8 w-8 cursor-pointer relative before:transition-colors before:absolute before:content-[''] before:-bottom-2 before:left-0 before:w-full before:h-px data-[selected]:before:bg-black shadow-sm hover:shadow"
+                        className="h-8 w-8 cursor-pointer relative before:transition-colors before:absolute before:content-[''] before:-bottom-2 before:left-0 before:w-full before:h-px data-[selected]:before:bg-black shadow-sm hover:shadow rounded-md"
                         style={{ background: color.hex_code }}
                       />
                     ))}
@@ -248,7 +249,7 @@ export default function ProductActions({
             otherOptions.map((option) => {
               return (
                 <div key={option.id}>
-                  <p className="mb-4">
+                  <p className="mb-4 rounded-md">
                     {option.title}
                     {options[option.id] && (
                       <span className="text-grayscale-500 ml-6">
@@ -261,23 +262,24 @@ export default function ProductActions({
                     onSelectionChange={(value) => {
                       setOptionValue(option.id, `${value}`)
                     }}
-                    placeholder={`Choose ${option.title.toLowerCase()}`}
+                    placeholder={`Выберите ${option.title.toLowerCase()}`}
                     className="w-full md:w-60"
                     isDisabled={!!disabled || isAdding}
                     aria-label={option.title}
                   >
-                    <UiSelectButton className="!h-12 px-4 gap-2 max-md:text-base">
+                    <UiSelectButton className="!h-12 px-4 gap-2 max-md:text-base rounded-md">
                       <UiSelectValue />
                       <UiSelectIcon className="h-6 w-6" />
                     </UiSelectButton>
-                    <ReactAria.Popover className="w-[--trigger-width]">
-                      <UiSelectListBox>
+                    <ReactAria.Popover className="w-[--trigger-width] rounded-md">
+                      <UiSelectListBox className="rounded-md">
                         {(option.values ?? [])
                           .filter((value) => Boolean(value.value))
                           .map((value) => (
                             <UiSelectListBoxItem
                               key={value.id}
                               id={value.value}
+                              className="rounded-md"
                             >
                               {value.value}
                             </UiSelectListBoxItem>
@@ -299,8 +301,8 @@ export default function ProductActions({
           onChange={setQuantity}
           minValue={1}
           maxValue={itemsInStock}
-          className="w-full sm:w-35 max-md:justify-center max-md:gap-2"
-          aria-label="Quantity"
+          className="w-full sm:w-35 max-md:justify-center max-md:gap-2 rounded-md"
+          aria-label="Количество"
         />
         <Button
           onPress={handleAddToCart}
@@ -309,10 +311,10 @@ export default function ProductActions({
           className="sm:flex-1"
         >
           {!selectedVariant
-            ? "Select variant"
+            ? "Выберите вариант"
             : !itemsInStock
-              ? "Out of stock"
-              : "Add to cart"}
+              ? "Нет в наличии"
+              : "Добавить в корзину"}
         </Button>
       </div>
     </>

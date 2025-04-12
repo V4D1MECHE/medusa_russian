@@ -43,7 +43,7 @@ export const RegionSwitcher: React.FC<{
         updateRegion(`${key}`, currentPath)
       }}
       className={className}
-      aria-label="Select country"
+      aria-label="Выберите страну"
     >
       <UiSelectButton variant="ghost" className={selectButtonClassName}>
         <UiSelectValue>

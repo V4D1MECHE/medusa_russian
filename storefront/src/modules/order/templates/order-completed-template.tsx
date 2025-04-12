@@ -28,35 +28,35 @@ export default async function OrderCompletedTemplate({
         start={{ base: 1, lg: 3, xl: 4 }}
         end={{ base: 13, lg: 11, xl: 10 }}
       >
-        <h1 className="text-md md:text-2xl mb-8 md:mb-16">
-          Thank you for your order!
+        <h1 className="text-md md:text-2xl mb-8 md:mb-16 rounded-md">
+          Спасибо за ваш заказ!
         </h1>
-        <p className="mb-4">
-          We are pleased to confirm that your order has been successfully placed
-          and will be processed shortly.
+        <p className="mb-4 rounded-md">
+          Мы рады подтвердить, что ваш заказ был успешно размещен
+          и будет обработан в ближайшее время.
         </p>
-        <p className="mb-8">
-          We have sent you the receipt and order details via{" "}
-          <strong>e-mail</strong>.<br />
-          Your order number is <strong>#{order.display_id}</strong>.
+        <p className="mb-8 rounded-md">
+          Мы отправили вам чек и детали заказа по{" "}
+          <strong>электронной почте</strong>.<br />
+          Номер вашего заказа <strong>#{order.display_id}</strong>.
         </p>
-        <div className="flex gap-x-6 gap-y-4 max-sm:flex-col mb-16">
+        <div className="flex gap-x-6 gap-y-4 max-sm:flex-col mb-16 rounded-md">
           {Boolean(matchingOrders.length) && (
-            <LocalizedButtonLink href={`/account/my-orders/${order.id}`}>
-              Check order details
+            <LocalizedButtonLink href={`/account/my-orders/${order.id}`} className="rounded-md">
+              Проверить детали заказа
             </LocalizedButtonLink>
           )}
-          <LocalizedButtonLink href="/" variant="outline">
-            Back to home
+          <LocalizedButtonLink href="/" variant="outline" className="rounded-md">
+            Вернуться на главную
           </LocalizedButtonLink>
         </div>
         <div className="flex max-sm:flex-col gap-x-4 gap-y-4 md:flex-col lg:flex-row mb-5">
-          <div className="flex-1 overflow-hidden rounded-xs border border-grayscale-200 p-4">
+          <div className="flex-1 overflow-hidden rounded-md border border-grayscale-200 p-4">
             <div className="flex gap-4 items-center mb-8">
               <Icon name="map-pin" />
-              <p className="text-grayscale-500">Shipping address</p>
+              <p className="text-grayscale-500">Адрес доставки</p>
             </div>
-            <p>
+            <p className="rounded-md">
               {[
                 order.shipping_address?.first_name,
                 order.shipping_address?.last_name,
@@ -80,12 +80,12 @@ export default async function OrderCompletedTemplate({
               {order.shipping_address?.phone}
             </p>
           </div>
-          <div className="flex-1 overflow-hidden rounded-xs border border-grayscale-200 p-4">
+          <div className="flex-1 overflow-hidden rounded-md border border-grayscale-200 p-4">
             <div className="flex gap-4 items-center mb-8">
               <Icon name="receipt" />
-              <p className="text-grayscale-500">Billing address</p>
+              <p className="text-grayscale-500">Платежный адрес</p>
             </div>
-            <p>
+            <p className="rounded-md">
               {[
                 order.billing_address?.first_name,
                 order.billing_address?.last_name,
@@ -110,14 +110,14 @@ export default async function OrderCompletedTemplate({
             </p>
           </div>
         </div>
-        <div className="rounded-xs border border-grayscale-200 p-4 mb-5">
+        <div className="rounded-md border border-grayscale-200 p-4 mb-5">
           {order.items?.map((item) => <Item key={item.id} item={item} />)}
         </div>
-        <div className="rounded-xs border border-grayscale-200 p-4 flex max-sm:flex-col gap-y-8 gap-x-10 md:flex-wrap justify-between">
+        <div className="rounded-md border border-grayscale-200 p-4 flex max-sm:flex-col gap-y-8 gap-x-10 md:flex-wrap justify-between">
           <div className="flex items-center self-baseline gap-4">
             <Icon name="credit-card" />
             <div>
-              <p className="text-grayscale-500">Payment</p>
+              <p className="text-grayscale-500">Оплата</p>
             </div>
           </div>
           <OrderTotals order={order} />

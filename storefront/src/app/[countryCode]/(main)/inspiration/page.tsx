@@ -3,12 +3,11 @@ import Image from "next/image"
 import { StoreRegion } from "@medusajs/types"
 import { listRegions } from "@lib/data/regions"
 import { Layout, LayoutColumn } from "@/components/Layout"
-import { LocalizedLink } from "@/components/LocalizedLink"
 import { CollectionsSection } from "@/components/CollectionsSection"
 
 export const metadata: Metadata = {
-  title: "Inspiration",
-  description: "Get inspired by our latest collections",
+  title: "Вдохновение",
+  description: "Вдохновитесь нашими последними коллекциями",
 }
 
 export async function generateStaticParams() {
@@ -40,156 +39,59 @@ export default function InspirationPage() {
           src="/images/content/living-room-dark-green-three-seater-sofa.png"
           width={2880}
           height={1500}
-          alt="Living room with dark green three-seater sofa"
-          className="md:h-screen md:object-cover mb-8 md:mb-26"
+          alt="Гостиная с темно-зеленым трехместным диваном"
+          className="md:h-screen md:object-cover mb-8 md:mb-26 rounded-md"
         />
       </div>
       <div className="pb-26 md:pb-36">
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
-            <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              The Astrid Curve sofa is a masterpiece of minimalism and luxury.
+            <h3 className="text-md mb-6 md:mb-16 md:text-2xl rounded-md">
+              Изогнутый диван Astrid - это шедевр минимализма и роскоши.
             </h3>
-            <div className="md:text-md max-md:mb-16 max-w-135">
+            <div className="md:text-md max-md:mb-16 max-w-135 rounded-md">
               <p>
-                Our design philosophy revolves around creating pieces that are
-                both beautiful and practical. Inspired by Scandinavian
-                simplicity, modern luxury, and timeless classics.
+                Наша философия дизайна основана на создании предметов, которые одновременно красивы и практичны. Вдохновлены скандинавской простотой, современной роскошью и неподвластной времени классикой.
               </p>
             </div>
           </LayoutColumn>
-          <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
-            <LocalizedLink href="/products/astrid-curve">
-              <Image
-                src="/images/content/dark-gray-three-seater-sofa.png"
-                width={768}
-                height={572}
-                alt="Dark gray three-seater sofa"
-                className="mb-4 md:mb-6"
-              />
-              <div className="flex justify-between">
-                <div>
-                  <p className="mb-1">Astrid Curve</p>
-                  <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold">1500€</p>
-                </div>
-              </div>
-            </LocalizedLink>
-          </LayoutColumn>
-          <LayoutColumn>
-            <Image
-              src="/images/content/living-room-brown-armchair-gray-corner-sofa.png"
-              width={2496}
-              height={1404}
-              alt="Living room with brown armchair and gray corner sofa"
-              className="mt-26 md:mt-36 mb-8 md:mb-26"
-            />
-          </LayoutColumn>
+        </Layout>
+        <Image
+          src="/images/content/living-room-brown-armchair-gray-corner-sofa.png"
+          width={2496}
+          height={1404}
+          alt="Гостиная с коричневым креслом и угловым серым диваном"
+          className="mt-26 md:mt-36 mb-8 md:mb-26 rounded-md"
+        />
+        <Layout>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
-            <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              Haven Sofas have minimalistic designs, neutral colors, and
-              high-quality textures.
+            <h3 className="text-md mb-6 md:mb-16 md:text-2xl rounded-md">
+              Диваны Haven отличаются минималистичным дизайном, нейтральными цветами и высококачественными текстурами.
             </h3>
-            <div className="md:text-md max-md:mb-16 max-w-135">
+            <div className="md:text-md max-md:mb-16 max-w-135 rounded-md">
               <p>
-                Perfect for those who seek comfort with a clean and understated
-                aesthetic. This collection brings the essence of Scandinavian
-                elegance to your living room.
+                Идеально подходит для тех, кто ищет комфорт с чистой и сдержанной эстетикой. Эта коллекция привносит в вашу гостиную суть скандинавской элегантности.
               </p>
             </div>
-          </LayoutColumn>
-          <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
-            <LocalizedLink
-              href="/products/nordic-haven"
-              className="mb-8 md:mb-16 inline-block"
-            >
-              <Image
-                src="/images/content/gray-three-seater-sofa.png"
-                width={768}
-                height={572}
-                alt="Gray three-seater sofa"
-                className="mb-4 md:mb-6"
-              />
-              <div className="flex justify-between">
-                <div>
-                  <p className="mb-1">Nordic Haven</p>
-                  <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold">1500€</p>
-                </div>
-              </div>
-            </LocalizedLink>
-            <LocalizedLink href="/products/nordic-breeze">
-              <Image
-                src="/images/content/gray-arm-chair.png"
-                width={768}
-                height={572}
-                alt="Gray arm chair"
-                className="mb-4 md:mb-6"
-              />
-              <div className="flex justify-between">
-                <div>
-                  <p className="mb-1">Nordic Breeze</p>
-                  <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold">1200€</p>
-                </div>
-              </div>
-            </LocalizedLink>
           </LayoutColumn>
         </Layout>
         <Image
           src="/images/content/living-room-gray-two-seater-puffy-sofa.png"
           width={2880}
           height={1618}
-          alt="Living room with gray two-seater puffy sofa"
-          className="md:h-screen md:object-cover mt-26 md:mt-36 mb-8 md:mb-26"
+          alt="Гостиная с серым двухместным пышным диваном"
+          className="md:h-screen md:object-cover mt-26 md:mt-36 mb-8 md:mb-26 rounded-md"
         />
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
-            <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              Oslo Drift is infused with playful textures and vibrant patterns
-              with eclectic vibes.
+            <h3 className="text-md mb-6 md:mb-16 md:text-2xl rounded-md">
+              Oslo Drift наполнен игривыми текстурами и яркими узорами с эклектичной атмосферой.
             </h3>
-            <div className="md:text-md max-md:mb-16 max-w-135">
+            <div className="md:text-md max-md:mb-16 max-w-135 rounded-md">
               <p>
-                Whether you&apos;re looking for bold statement pieces or subtle
-                elegance, this collection elevates your home with a touch of
-                glamour, sophistication, and unmatched coziness.
+                Независимо от того, ищете ли вы смелые акцентные предметы или утонченную элегантность, эта коллекция дополнит ваш дом ноткой гламура, изысканности и непревзойденного уюта.
               </p>
             </div>
-          </LayoutColumn>
-          <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
-            <LocalizedLink href="/products/oslo-drift">
-              <Image
-                src="/images/content/white-two-seater-sofa.png"
-                width={768}
-                height={572}
-                alt="White two-seater sofa"
-                className="mb-4 md:mb-6"
-              />
-              <div className="flex justify-between">
-                <div>
-                  <p className="mb-1">Oslo Drift</p>
-                  <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold">1500€</p>
-                </div>
-              </div>
-            </LocalizedLink>
           </LayoutColumn>
         </Layout>
         <CollectionsSection className="mt-26 md:mt-36" />

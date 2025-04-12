@@ -47,24 +47,24 @@ export const PersonalInfoForm = withReactQueryProvider<{
             : false)
         return (
           <>
-            <p className="text-md mb-8 sm:mb-10">Personal information</p>
+            <p className="text-md mb-8 sm:mb-10">Личная информация</p>
             <div className="flex flex-col gap-4 sm:gap-8">
               <div className="flex max-xs:flex-col gap-y-4 gap-x-6">
                 <InputField
-                  placeholder="First name"
+                  placeholder="Имя"
                   name="first_name"
                   className=" flex-1"
                   inputProps={{ autoComplete: "given-name" }}
                 />
                 <InputField
-                  placeholder="Last name"
+                  placeholder="Фамилия"
                   name="last_name"
                   className="flex-1"
                   inputProps={{ autoComplete: "family-name" }}
                 />
               </div>
               <InputField
-                placeholder="Phone"
+                placeholder="Телефон"
                 name="phone"
                 className="flex-1 mb-8 sm:mb-10"
                 type="tel"
@@ -76,9 +76,9 @@ export const PersonalInfoForm = withReactQueryProvider<{
             </div>
             <div className="flex gap-6 justify-between">
               <SubmitButton isLoading={isPending} isDisabled={isDisabled}>
-                Save changes
+                Сохранить изменения
               </SubmitButton>
-              <UiCloseButton variant="outline">Cancel</UiCloseButton>
+              <UiCloseButton variant="outline">Отмена</UiCloseButton>
             </div>
           </>
         )

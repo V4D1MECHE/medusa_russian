@@ -79,12 +79,12 @@ function PaginatedProducts({
 
   return (
     <>
-      <Layout className="gap-y-10 md:gap-y-16 mb-16">
+      <Layout className="gap-y-10 md:gap-y-16 mb-16 rounded-md">
         {productsQuery?.data?.pages[0]?.response?.products?.length ? (
           productsQuery?.data?.pages.flatMap((page) => {
             return page?.response?.products.map((p: StoreProduct) => {
               return (
-                <LayoutColumn key={p.id} className="md:!col-span-4 !col-span-6">
+                <LayoutColumn key={p.id} className="md:!col-span-4 !col-span-6 rounded-md">
                   <ProductPreview product={p} />
                 </LayoutColumn>
               )

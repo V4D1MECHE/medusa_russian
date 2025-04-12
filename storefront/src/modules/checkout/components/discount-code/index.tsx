@@ -32,11 +32,11 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
         <InputField
           name="code"
           inputProps={{ autoFocus: false, className: "max-lg:h-12" }}
-          placeholder="Discount code"
+          placeholder="Код скидки"
           className="flex-1"
         />
         <SubmitButton className="lg:h-auto max-h-14 grow-0 h-12">
-          Apply
+          Применить
         </SubmitButton>
       </div>
     </Form>

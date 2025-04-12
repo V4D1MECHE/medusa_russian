@@ -105,7 +105,7 @@ const Addresses = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
               isOpen && "font-semibold"
             )}
           >
-            2. Delivery details
+            2. Детали доставки
           </p>
         </div>
         {!isOpen && cart?.shipping_address && (
@@ -115,7 +115,7 @@ const Addresses = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
               router.push(pathname + "?step=delivery")
             }}
           >
-            Change
+            Изменить
           </Button>
         )}
       </div>
@@ -195,7 +195,7 @@ const Addresses = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
                   isLoading={isPending}
                   isDisabled={isDisabled}
                 >
-                  Next
+                  Далее
                 </SubmitButton>
                 <ErrorMessage error={state?.error} />
               </>
@@ -205,7 +205,7 @@ const Addresses = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
       ) : cart?.shipping_address ? (
         <div className="flex flex-col gap-4">
           <div className="flex max-sm:flex-col flex-wrap gap-y-2 gap-x-12">
-            <div className="text-grayscale-500">Shipping address</div>
+            <div className="text-grayscale-500">Адрес доставки</div>
             <div className="text-grayscale-600">
               {[
                 cart.shipping_address.first_name,
@@ -232,10 +232,10 @@ const Addresses = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
           </div>
           {sameAsBilling || cart.billing_address ? (
             <div className="flex max-sm:flex-col flex-wrap gap-y-2 gap-x-17">
-              <div className="text-grayscale-500">Billing address</div>
+              <div className="text-grayscale-500">Адрес оплаты</div>
               <div className="text-grayscale-600">
                 {sameAsBilling ? (
-                  "Same as shipping address"
+                  "Совпадает с адресом доставки"
                 ) : (
                   <>
                     {[

@@ -39,14 +39,14 @@ export default async function CollectionTemplate({
 
   return (
     <>
-      <div className="max-md:mt-18 relative aspect-[2/1] md:h-screen w-full max-w-full mb-8 md:mb-19">
+      <div className="max-md:mt-18 relative aspect-[2/1] md:h-screen w-full max-w-full mb-8 md:mb-19 rounded-lg overflow-hidden">
         <Image
           src={
             collectionDetails.data?.collection_page_image?.url ||
             "/images/content/living-room-gray-two-seater-puffy-sofa.png"
           }
           fill
-          alt={collection.title + " image"}
+          alt={collection.title + " изображение"}
           className="object-cover z-0"
         />
       </div>
@@ -65,13 +65,13 @@ export default async function CollectionTemplate({
             )}
             {collectionDetails.data.collection_page_content && (
               <LayoutColumn start={{ base: 1, lg: 8 }} end={13}>
-                <div className="md:text-md md:mt-18 flex flex-col gap-5 md:gap-9">
+                <div className="md:text-md md:mt-18 flex flex-col gap-5 md:gap-9 rounded-md">
                   {collectionDetails.data.collection_page_content
                     .split("\n")
                     .map((p) => p.trim())
                     .filter(Boolean)
                     .map((p, i) => (
-                      <p key={i}>{p}</p>
+                      <p key={i} className="rounded-md">{p}</p>
                     ))}
                 </div>
               </LayoutColumn>
@@ -114,7 +114,7 @@ export default async function CollectionTemplate({
           />
         )}
       </Suspense>
-      <div className="pb-10 md:pb-20" />
+      <div className="pb-10 md:pb-20 rounded-b-lg" />
     </>
   )
 }
