@@ -218,3 +218,4 @@ You should now be able to access the storefront at http://localhost:8000.
   </picture>
 </a>
 # medusa_russian
+# medusa_russian
