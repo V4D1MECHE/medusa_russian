@@ -2,7 +2,7 @@
 
 <video src="https://github.com/user-attachments/assets/1afe48e4-5a28-4aee-b4bd-e405701d3cc6" controls="controls" muted="muted" playsinline="playsinline"></video>
 
-The **Fashion E-commerce Starter** is a modern, customizable e-commerce template built with **Medusa 2.0**. Designed around the concept of the sustainable furniture brand **Sofa Society**, this starter showcases the power of new Medusa 2.0 version. With its focus on cutting-edge design, sustainability, and personalization, Sofa Society offers users an elegant shopping experience where they can explore customizable collections, product options, and a streamlined checkout flow.
+The **Fashion E-commerce Starter** is a modern, customizable e-commerce template built with **Medusa 2.0**. Designed around the concept of the sustainable furniture brand **MiLi**, this starter showcases the power of new Medusa 2.0 version. With its focus on cutting-edge design, sustainability, and personalization, MiLi offers users an elegant shopping experience where they can explore customizable collections, product options, and a streamlined checkout flow.
 
 This starter kit is an ideal solution for developers who need to set up a professional, feature-rich fashion e-commerce store quickly. It comes with a sleek and modern design, customizable collections, an Inspiration page, an About page, and a streamlined checkout process. The storefront is fully responsive and optimized for mobile, tablet, and desktop devices.
 
@@ -18,11 +18,11 @@ This starter kit is an ideal solution for developers who need to set up a profes
 
 ## Features
 
-- **Sleek, Modern Design**: The storefront boasts a minimalist, contemporary design that perfectly reflects **Sofa Society's** commitment to modern aesthetics and sustainability.
+- **Sleek, Modern Design**: The storefront boasts a minimalist, contemporary design that perfectly reflects **MiLi's** commitment to modern aesthetics and sustainability.
 - **Dynamic Materials and Colors**: Add richness to your product offerings by defining **materials** and **colors** for each product. Colors will be displayed using their corresponding hex codes, and each material can have multiple color options. Customers first select a material, then a color, with dynamic pricing based on their choices.
 - **Customizable Collections**: Easily customize the content and images for each collection. Each product page also features images and a CTA for the collection it belongs to, which can be personalized as well, creating a fully branded shopping experience.
-- **Premade Inspiration Page**: A beautiful, ready-to-use inspiration page helps customers explore the latest trends and styles, showcasing Sofa Society's furniture in real-world settings.
-- **About Page**: Share your brand’s story, values, and commitment to sustainability with a pre-built about page that captures the essence of **Sofa Society**.
+- **Premade Inspiration Page**: A beautiful, ready-to-use inspiration page helps customers explore the latest trends and styles, showcasing MiLi's furniture in real-world settings.
+- **About Page**: Share your brand’s story, values, and commitment to sustainability with a pre-built about page that captures the essence of **MiLi**.
 - **Streamlined Checkout Flow**: The checkout process is designed to be fast, intuitive, and frictionless, providing a seamless shopping experience for your customers from start to finish.
 - **Fully Responsive Design**: Optimized for mobile, tablet, and desktop devices, ensuring a smooth, consistent experience across all platforms.
 - **Stripe Integration for Payments**: Accept payments effortlessly by integrating **Stripe**. Simply add your Stripe API key to `medusa/.env` and the publishable key to `storefront/.env` to get started.
@@ -217,3 +217,4 @@ You should now be able to access the storefront at http://localhost:8000.
     <img src="https://github.com/user-attachments/assets/772994f8-32c6-4b27-832f-2660f833fd78">
   </picture>
 </a>
+# medusa_russian
